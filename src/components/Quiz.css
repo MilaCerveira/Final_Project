@@ -22,10 +22,8 @@ body {
     padding: 40px;
     font-family: Arial;
     text-align: center;
-    background-image: url("https://images.fineartamerica.com/images-medium-large-5/illustrated-map-of-european-culture-ikon-ikon-images.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    
+    background: url('../assets/cartooneuromap.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
