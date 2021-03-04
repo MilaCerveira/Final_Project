@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+.container {
+    text-align: center;
+    border: 5px solid #00bfff;
+    background-color:white;
+    color: black;
+    font-family:Lucida Console, Courier, Monotype; 
+    padding-bottom: 40px;
+    padding-top: 40px;
+    width: 40%;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    
+   
+}
+
+
+body {
+    background-color: #121212;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+    background-image: url("https://images.fineartamerica.com/images-medium-large-5/illustrated-map-of-european-culture-ikon-ikon-images.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+  }
