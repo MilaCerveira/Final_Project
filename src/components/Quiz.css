@@ -2,15 +2,18 @@
 
 .container {
     text-align: center;
-    border: 5px solid #00bfff;
+    border: 5px solid white;
     background-color:white;
     color: black;
     font-family:Lucida Console, Courier, Monotype; 
-    padding-bottom: 40px;
-    padding-top: 40px;
+    padding-bottom: 50px;
+    padding-top: 50px;
     width: 40%;
     display: inline-block;
     font-family: "Montserrat", sans-serif;
+    background: url('../assets/euro.png'); 
+    background-size: 500px 260px;
+    background-repeat: no-repeat;
     
    
 }
