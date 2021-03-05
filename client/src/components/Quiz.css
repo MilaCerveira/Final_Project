@@ -12,11 +12,24 @@
     background-size: 470px 470px;
     background-repeat: no-repeat;
     /* padding-top: 105px; */
-    width: 50%;
-    padding-bottom: 50%;
+    width: 30%;
+    position: fixed;
+    
+    
     margin: 10% auto;
     position: relative;
     overflow: hidden;
+}
+.boat{
+    float: left;
+    animation: boatAnimation 13s;
+    
+    width:50px; 
+    height: auto;
+    animation-iteration-count: infinite;
+    position: sticky; top: 50px;
+    
+    
 }
 
 
@@ -35,3 +48,25 @@ body {
     justify-content: center;
   
   }
+
+  @keyframes boatAnimation{
+    50% {
+      transform: translate(20px, 20px);
+    }
+    50% {
+        transform: translate(50px, 20px);
+      }
+      50% {
+        transform: translate(100px, 20px);
+      }
+      50% {
+        transform: translate(50px, 20px);
+      }
+      50% {
+        transform: translate(-20px, -90px);
+      }
+      50% {
+        transform: translate(40px, -200px);
+      }
+  }
+  

@@ -68,8 +68,10 @@ export const Quiz = () => {
     }
     return (
         <>
+        
    
             <div className={'container'}>
+            
                 <Grid >
                     <Grid.Row columns={1}>
                         <Grid.Column>
@@ -96,9 +98,11 @@ export const Quiz = () => {
                     </Grid.Row>
                 </Grid>
                 <div>Question {activeQuestion + 1} out of {questions.length}</div>
+                
+
             </div>
             
-            
+            <img className={'boat'} src='https://image.flaticon.com/icons/png/128/4270/4270015.png' alt="boat" />
 
         </>
     );
