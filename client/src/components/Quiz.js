@@ -68,7 +68,7 @@ export const Quiz = () => {
     }
     return (
         <>
-    
+   
             <div className={'container'}>
                 <Grid >
                     <Grid.Row columns={1}>

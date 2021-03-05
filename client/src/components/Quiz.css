@@ -3,23 +3,20 @@
 .container {
     text-align: center;
     border: 5px solid white;
-    background-color:white;
+    background-color: white;
     color: black;
-    font-family:Lucida Console, Courier, Monotype; 
-    padding-bottom: 100px;
-    padding-top: 105px;
-    width: 40%;
-    display: inline-block;
     font-family: "Montserrat", sans-serif;
     background: url('../assets/euro.png'); 
-    background-size: 470px 405px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    
-   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 470px 470px;
+    background-repeat: no-repeat;
+    /* padding-top: 105px; */
+    width: 50%;
+    padding-bottom: 50%;
+    margin: 10% auto;
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -34,7 +31,7 @@ body {
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
   
   }
