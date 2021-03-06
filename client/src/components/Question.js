@@ -2,8 +2,7 @@ import React from 'react';
 import  {Grid } from "semantic-ui-react";
 import { useState, useEffect } from 'react';
 import './Quiz.css'
-import boat1 from '../assets/boat1.png'
-import b from '../assets/cartooneuromap.png';
+import map from '../assets/cartooneuromap.png';
 
 const mockData = [
     {
@@ -56,11 +55,7 @@ const mockData = [
     
 ]
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-export const Quiz = () => {
+export const Question = () => {
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [boatLeftPosition, setBoatLeftPosition] = useState(-1);
@@ -68,21 +63,6 @@ export const Quiz = () => {
         // do the following when component first mounts
         // this is where we will call our  API
         setQuestions(mockData);
-
-        let done = 0
-        while(done < 40) {
-            var img = document.getElementsByClassName("image")
-            console.log("img", img);
-            if (img && img.length > 0) {
-                done = true;
-                const imagePos = img[0].getBoundingClientRect();
-                console.log("imagePos", imagePos + 10);
-                setBoatLeftPosition(imagePos.left);
-            }
-            await sleep(50);
-            done++;
-        }
-
     }, [])
 
     if (questions.length === 0) {
@@ -92,7 +72,7 @@ export const Quiz = () => {
         <>
         
             <div className="image-container">
-                <img class="image" src={b}/>
+                <img class="image" src={map}/>
             </div>
             <div className={'container'}>
             
@@ -122,16 +102,8 @@ export const Quiz = () => {
                     </Grid.Row>
                 </Grid>
                 <div>Question {activeQuestion + 1} out of {questions.length}</div>
-                
-
-            </div>
-
-            {boatLeftPosition >= 0 &&
-                <img style={{left: boatLeftPosition}} className={'boat'} src={boat1} alt="boat" />
-            }
+                </div>
         </>
     );
 }
-export default Quiz;
-            
-
+                export default Question;
