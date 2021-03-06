@@ -14,6 +14,8 @@
     /* padding-top: 105px; */
     width: 30%;
     position: fixed;
+    padding-top:120px;
+    padding-bottom:30px;
     
     
     margin: 10% auto;
@@ -23,11 +25,10 @@
 .boat{
     float: left;
     animation: boatAnimation 18s;
-    
-    width:50px; 
+    width:30px; 
     height: auto;
     animation-iteration-count: infinite;
-    position: sticky; top: 50px;
+    position: sticky; top: 0px;
     
     
 }
@@ -40,7 +41,7 @@ body {
     font-family: Arial;
     text-align: center;
     background: url('../assets/cartooneuromap.png') no-repeat center center fixed; 
-    background-size: 1205px 565px;
+    background-size: 1200px 555px;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -66,7 +67,7 @@ body {
         transform: translate(-20px, -90px);
       }
       50% {
-        transform: translate(40px, -200px);
+        transform: translate(40px, -450px);
       }
   }
   
