@@ -1,12 +1,17 @@
 package com.example.language_game.models;
 
-
-import javax.persistence.Column;
 import javax.persistence.Id;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="answers")
 public class Answer {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name="answerBody")
