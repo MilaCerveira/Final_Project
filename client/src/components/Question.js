@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import './Quiz.css'
 import map from '../assets/cartooneuromap.png';
 
+
 const mockData = [
     {
         id: '1',
@@ -71,9 +72,7 @@ export const Question = () => {
     return (
         <>
         
-            <div className="image-container">
-                <img class="image" src={map}/>
-            </div>
+
             <div className={'container'}>
             
                 <Grid>

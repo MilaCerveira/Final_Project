@@ -1,42 +1,17 @@
 import React from 'react';
 import boat from '../assets/boat1.png'
 import map from '../assets/cartooneuromap.png';
-import Question from '../components/Question';
-
-
-
-
-
 
 
 const Map = () => {
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    let displayQuestionComponent = false;
-
-    if (displayQuestionComponent == true){
-        return (
-            <Question/>
-        )
-    }
-
     return(
         <>
-        <div className="image-container">
-        <img class="image" src={map}/>
-    </div>
-
-        <h1>I am the map container</h1>
         </>
     )
-
-
 }
 
-export default Map;
+
 
 
 // function sleep(ms) {
@@ -55,3 +30,5 @@ export default Map;
 //     await sleep(50);
 //     done++;
 // }
+
+
