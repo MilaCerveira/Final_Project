@@ -3,19 +3,34 @@
 .container {
     text-align: center;
     border: 5px solid white;
-    background-color:white;
+    background-color: white;
     color: black;
-    font-family:Lucida Console, Courier, Monotype; 
-    padding-bottom: 100px;
-    padding-top: 105px;
-    width: 40%;
-    display: inline-block;
     font-family: "Montserrat", sans-serif;
     background: url('../assets/euro.png'); 
-    background-size: 470px 405px;
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: 470px 470px;
+    background-repeat: no-repeat;
+    /* padding-top: 105px; */
+    width: 30%;
+    position: fixed;
+    padding-top:120px;
+    padding-bottom:30px;
     
-   
+    
+    margin: 10% auto;
+    position: relative;
+    overflow: hidden;
+}
+.boat{
+    float: left;
+    animation: boatAnimation 18s;
+    width:30px; 
+    height: auto;
+    animation-iteration-count: infinite;
+    position: sticky; top: 0px;
+    
+    
 }
 
 
@@ -25,10 +40,34 @@ body {
     padding: 40px;
     font-family: Arial;
     text-align: center;
-    
     background: url('../assets/cartooneuromap.png') no-repeat center center fixed; 
-    background-size: 1205px 565px;
+    background-size: 1200px 555px;
     height: 100%;
-    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* display: flex; */
+    justify-content: center;
   
   }
+
+  @keyframes boatAnimation{
+    50% {
+      transform: translate(20px, 20px);
+    }
+    50% {
+        transform: translate(50px, 20px);
+      }
+      50% {
+        transform: translate(100px, 20px);
+      }
+      50% {
+        transform: translate(50px, 20px);
+      }
+      50% {
+        transform: translate(-20px, -90px);
+      }
+      50% {
+        transform: translate(40px, -460px);
+      }
+  }
+  

@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from "semantic-ui-react";
 import { useState, useEffect } from 'react';
 import './Quiz.css'
+import a from '../assets/a.png'
 
 const mockData = [
     {
@@ -68,8 +69,10 @@ export const Quiz = () => {
     }
     return (
         <>
-    
+        
+   
             <div className={'container'}>
+            
                 <Grid >
                     <Grid.Row columns={1}>
                         <Grid.Column>
@@ -96,9 +99,11 @@ export const Quiz = () => {
                     </Grid.Row>
                 </Grid>
                 <div>Question {activeQuestion + 1} out of {questions.length}</div>
+                
+
             </div>
             
-            
+            <img className={'boat'} src={a} alt="boat" />
 
         </>
     );
