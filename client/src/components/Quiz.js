@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from "semantic-ui-react";
 import { useState, useEffect } from 'react';
 import './Quiz.css'
+import bb from '../assets/bb.png'
 
 const mockData = [
     {
@@ -102,7 +103,7 @@ export const Quiz = () => {
 
             </div>
             
-            <img className={'boat'} src='https://image.flaticon.com/icons/png/128/4270/4270015.png' alt="boat" />
+            <img className={'boat'} src={bb} alt="boat" />
 
         </>
     );
