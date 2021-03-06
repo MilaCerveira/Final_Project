@@ -1,6 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.image-container {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  bottom: 40px;
+  right: 0;
+  text-align: center;
+}
+
+.image {
+  width: auto;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
 .container {
+  z-index: 2;
+    width: 35vw;
     text-align: center;
     border: 5px solid white;
     background-color: white;
@@ -11,63 +38,53 @@
     background-repeat: no-repeat;
     background-size: 470px 470px;
     background-repeat: no-repeat;
-    /* padding-top: 105px; */
-    width: 30%;
-    position: fixed;
     padding-top:120px;
     padding-bottom:30px;
-    
-    
-    margin: 10% auto;
-    position: relative;
     overflow: hidden;
 }
-.boat{
-    float: left;
-    animation: boatAnimation 18s;
-    width:30px; 
-    height: auto;
-    animation-iteration-count: infinite;
-    position: sticky; top: 0px;
-    
-    
+.boat {
+  animation: boatAnimation 25s;
+  width:30px; 
+  height: auto;
+  animation-iteration-count: infinite;
+  position: absolute;
+  top: 40px;
+  /* left: 20%; */
 }
 
-
 body {
-    background-color: #121212;
-    color: white;
-    padding: 40px;
-    font-family: Arial;
-    text-align: center;
-    background: url('../assets/cartooneuromap.png') no-repeat center center fixed; 
-    background-size: 1200px 555px;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* display: flex; */
-    justify-content: center;
-  
-  }
+  background-color: white;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  height: 100%;
+}
 
+@keyframes boatAnimation{
+  50% {
+    transform: translate(0, calc(100vh - 120px));
+  }
+} 
+
+/*
   @keyframes boatAnimation{
     50% {
       transform: translate(20px, 20px);
     }
     50% {
-        transform: translate(50px, 20px);
-      }
-      50% {
-        transform: translate(100px, 20px);
-      }
-      50% {
-        transform: translate(50px, 20px);
-      }
-      50% {
-        transform: translate(-20px, -90px);
-      }
-      50% {
-        transform: translate(40px, -460px);
-      }
-  }
-  
+      transform: translate(50px, 20px);
+    }
+    50% {
+      transform: translate(100px, 20px);
+    }
+    50% {
+      transform: translate(50px, 20px);
+    }
+    50% {
+      transform: translate(-20px, -90px);
+    }
+    50% {
+      transform: translate(40px, -460px);
+    }
+  } 
+  */

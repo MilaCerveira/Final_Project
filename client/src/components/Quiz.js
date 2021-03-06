@@ -1,8 +1,9 @@
 import React from 'react';
-import { Grid } from "semantic-ui-react";
+import  {Grid } from "semantic-ui-react";
 import { useState, useEffect } from 'react';
 import './Quiz.css'
 import a from '../assets/a.png'
+import b from '../assets/cartooneuromap.png';
 
 const mockData = [
     {
@@ -55,13 +56,33 @@ const mockData = [
     
 ]
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export const Quiz = () => {
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [questions, setQuestions] = useState([]);
-    useEffect(() => {
+    const [boatLeftPosition, setBoatLeftPosition] = useState(-1);
+    useEffect(async () => {
         // do the following when component first mounts
         // this is where we will call our  API
         setQuestions(mockData);
+
+        let done = 0
+        while(done < 40) {
+            var img = document.getElementsByClassName("image")
+            console.log("img", img);
+            if (img && img.length > 0) {
+                done = true;
+                const imagePos = img[0].getBoundingClientRect();
+                console.log("imagePos", imagePos + 10);
+                setBoatLeftPosition(imagePos.left);
+            }
+            await sleep(50);
+            done++;
+        }
+
     }, [])
 
     if (questions.length === 0) {
@@ -70,41 +91,44 @@ export const Quiz = () => {
     return (
         <>
         
-   
+            <div className="image-container">
+                <img class="image" src={b}/>
+            </div>
             <div className={'container'}>
             
-                <Grid >
+                <Grid>
                     <Grid.Row columns={1}>
                         <Grid.Column>
                             <div>
                                 {questions[activeQuestion].description}
-                        </div>
+                            </div>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row columns={2}>
                         <Grid.Column>
                             {questions[activeQuestion].answers[0].description}
-                    </Grid.Column>
+                        </Grid.Column>
                         <Grid.Column>
-                        {questions[activeQuestion].answers[1].description}
-                    </Grid.Column>
+                            {questions[activeQuestion].answers[1].description}
+                        </Grid.Column>
                     </Grid.Row>
                     <Grid.Row columns={2}>
                         <Grid.Column>
-                        {questions[activeQuestion].answers[2].description}
-                    </Grid.Column>
+                            {questions[activeQuestion].answers[2].description}
+                        </Grid.Column>
                         <Grid.Column>
-                        {questions[activeQuestion].answers[3].description}
-                    </Grid.Column>
+                            {questions[activeQuestion].answers[3].description}
+                        </Grid.Column>
                     </Grid.Row>
                 </Grid>
                 <div>Question {activeQuestion + 1} out of {questions.length}</div>
                 
 
             </div>
-            
-            <img className={'boat'} src={a} alt="boat" />
 
+            {boatLeftPosition >= 0 &&
+                <img style={{left: boatLeftPosition}} className={'boat'} src={a} alt="boat" />
+            }
         </>
     );
 }
