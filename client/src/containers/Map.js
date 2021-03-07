@@ -11,19 +11,19 @@ import Question from '../components/Question';
 
 const Map = () => {
 
-    const [questions, setQuestions] = useState({});
+    // const [questions, setQuestions] = useState({});
 
-    const getQuestions = () =>{
-        console.log('getting questions');
-        fetch(`http://localhost:8080/questions`)
-        .then(res => res.json())
-        .then(data => setQuestions(data));
-    }
+    // const getQuestions = () =>{
+    //     console.log('getting questions');
+    //     fetch(`http://localhost:8080/questions/?language=Spanish`)
+    //     .then(res => res.json())
+    //     .then(data => setQuestions(data));
+    // }
 
 
-      useEffect(() => {
-        getQuestions();
-      }, []);
+    //   useEffect(() => {
+    //     getQuestions();
+    //   }, []);
     
 
 
