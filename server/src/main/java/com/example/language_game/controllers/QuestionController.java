@@ -21,4 +21,8 @@ public class QuestionController {
     @GetMapping("/questions")
     public ResponseEntity<List<Question>> getAllQuestions(){
         return new ResponseEntity<>(questionRepository.findAll(), HttpStatus.OK);}
+
+
+
+        
 }

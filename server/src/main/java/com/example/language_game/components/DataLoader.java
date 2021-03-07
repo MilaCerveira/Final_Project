@@ -26,13 +26,13 @@ public class DataLoader  implements ApplicationRunner {
 
     public void run(ApplicationArguments args){
 
-        Question ptquestion1 = new Question("test Q 1", "Portuguese");
+        Question ptquestion1 = new Question("What is the Portuguese word for 'beer'?", "Portuguese");
         questionRepository.save(ptquestion1);
 
-        Answer ptq1answer1 = new Answer("test", false, "test", ptquestion1);
-        Answer ptq1answer2 = new Answer("test", true, "test", ptquestion1);
-        Answer ptq1answer3 = new Answer("test", false, "test", ptquestion1);
-        Answer ptq1answer4 = new Answer("test", false, "test", ptquestion1);
+        Answer ptq1answer1 = new Answer("Pao", false, "No, the right answer is Cerveja.", ptquestion1);
+        Answer ptq1answer2 = new Answer("Cerveja", true, "Well done!", ptquestion1);
+        Answer ptq1answer3 = new Answer("Cerveza", false, "test", ptquestion1);
+        Answer ptq1answer4 = new Answer("Birra", false, "No, that is the Italian word", ptquestion1);
         answerRepository.save(ptq1answer1);
         answerRepository.save(ptq1answer2);
         answerRepository.save(ptq1answer3);
