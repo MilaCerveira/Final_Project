@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import boat from '../assets/boat1.png'
 import map from '../assets/cartooneuromap.png';
 import Question from '../components/Question';
@@ -10,6 +10,33 @@ import Question from '../components/Question';
 
 
 const Map = () => {
+
+    const [questions, setQuestions] = useState({});
+
+    const getQuestions = () =>{
+        console.log('getting questions');
+        fetch(`http://localhost:8080/questions`)
+        .then(res => res.json())
+        .then(data => setQuestions(data));
+    }
+
+
+      useEffect(() => {
+        getQuestions();
+      }, []);
+    
+
+
+    // const getLaunch = () => {
+    //     console.log("getting launch information");
+    //     fetch(`https://api.spacexdata.com/v3/launches/${selectedLaunchId}`)
+    //       .then(res => res.json())
+    //       .then(data => setLaunch(data));
+    //   }
+
+
+
+
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
