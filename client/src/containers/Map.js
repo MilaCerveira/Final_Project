@@ -15,7 +15,7 @@ const Map = () => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    let displayQuestionComponent = false;
+    let displayQuestionComponent =true;
 
     if (displayQuestionComponent == true){
         return (

@@ -26,23 +26,16 @@ class LanguageGameApplicationTests {
 
 	@Test
 	public void createAnswer(){
-		Answer answer1 = new Answer("test", false, "test");
+		Question question1 = new Question("question body", "French");
+		questionRepository.save(question1);
+		Answer answer1 = new Answer("answer body", false, "answer outcome", question1);
 		answerRepository.save(answer1);
 
 	}
 
-	@Test
-	public void createQuestion(){
-		Answer answer1 = new Answer("test", false, "test");
-		Answer answer2 = new Answer("test", true, "test");
-		Answer answer3 = new Answer("test", false, "test");
-		Answer answer4 = new Answer("test", false, "test");
-		ArrayList<Answer> Q1answers = new ArrayList<Answer>();
-		Q1answers.add(answer1);
-		Q1answers.add(answer2);
-		Q1answers.add(answer3);
-		Q1answers.add(answer4);
-		Question question1 = new Question("test Q 1", Q1answers);
-	}
+//	@Test
+//	public void createQuestion(){
+//
+//	}
 
 }

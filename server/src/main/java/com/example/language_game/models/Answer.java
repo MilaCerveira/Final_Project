@@ -1,17 +1,20 @@
 package com.example.language_game.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Id;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Entity
 @Table(name="answers")
-public class Answer {
+public class Answer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    //@Column(name = "id")
     private Long id;
 
     @Column(name="answerBody")
@@ -23,16 +26,18 @@ public class Answer {
     @Column(name="outcome")
     private String outcome;
 
-    public Answer(String answerBody, boolean correct, String outcome) {
+    @JsonIgnoreProperties(value="answers")
+    @ManyToOne
+    @JoinColumn(name = "question_id", nullable = false)
+    private Question question;
+
+    public Answer(String answerBody, boolean correct, String outcome, Question question) {
         this.answerBody = answerBody;
         this.correct = correct;
         this.outcome = outcome;
+        this.question = question;
     }
     public Answer(){}
-
-    public Long getID(){
-        return id;
-    }
 
 
 
@@ -58,6 +63,22 @@ public class Answer {
 
     public void setOutcome(String outcome) {
         this.outcome = outcome;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 }
 
