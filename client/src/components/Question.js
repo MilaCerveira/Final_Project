@@ -61,8 +61,8 @@ import map from '../assets/cartooneuromap.png';
 
 export const Question = () => {
 
-    const [questions, setQuestions] = useState(0);
-    const [activeQuestion, setActiveQuestion] = useState(0);
+    const [questions, setQuestions] = useState([]);
+    const [activeQuestion, setActiveQuestion] = useState(1);
 
     const getQuestions = () =>{
         console.log('getting questions');
@@ -88,12 +88,9 @@ export const Question = () => {
     
 
 
-      useEffect(() => {
+      useEffect(async() => {
         getQuestions();
       }, []);
-
-
-
 
 
     // const [activeQuestion, setActiveQuestion] = useState(0);
@@ -114,7 +111,11 @@ export const Question = () => {
 
         <>
         <h1>Hello</h1>
-         <h1>{questions[activeQuestion].body}</h1> 
+        {questions[activeQuestion] &&
+        <h1>
+          {questions[activeQuestion].body}
+        </h1>
+      }
        
         
 
@@ -190,5 +191,6 @@ export const Question = () => {
         //         </div>
         // </>
     );
+
 }
                 export default Question;
