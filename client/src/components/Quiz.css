@@ -16,9 +16,10 @@
   font-size: 10px;
   color: white;
 }
-.questionBody{
+.qs{
   font-family: 'Roboto Condensed', sans-serif;
-  color: white;
+  color: blue;
+
 }
 
 .image-container {
@@ -48,7 +49,7 @@
     background: url('../assets/euro.png'); 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 470px 470px;
+    background-size: 500px 400px;
     background-repeat: no-repeat;
     padding-top:100px;
     padding-bottom:30px;
