@@ -62,13 +62,17 @@ import map from '../assets/cartooneuromap.png';
 export const Question = () => {
 
     const [questions, setQuestions] = useState([]);
-    const [activeQuestion, setActiveQuestion] = useState(1);
+    const [activeQuestion, setActiveQuestion] = useState(0);
+    //const [answers, setAnswers] = useState([]);
+    
+    
 
     const getQuestions = () =>{
         console.log('getting questions');
         fetch(`http://localhost:8080/questions/?language=Portuguese`)
         .then(res => res.json())
         .then(data =>  {console.log(data);setQuestions(data)});
+
 
         console.log(questions)
 
@@ -113,84 +117,24 @@ export const Question = () => {
         <h1>Hello</h1>
         {questions[activeQuestion] &&
         <h1>
-          {questions[activeQuestion].body}
-        </h1>
-      }
-       
+        {questions[activeQuestion].answers[0].answerBody}
+      </h1>
+      
+}
+        
+        
+        </>
         
 
         
-{/* 
-        <div className={'container'}></div>
+
         
-            <Grid>
-                <Grid.Row columns={1}>
-                    <Grid.Column>
-                        <div>
-                            {/* {questions[0].body} */}
-                            {/* {questions}
-                        </div>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row columns={2}>
-                    <Grid.Column>
-                        {questions[0].answers[0].answerbody}
-                    </Grid.Column>
-                    <Grid.Column>
-                        {questions[0].answers[1].answerbody}
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row columns={2}>
-                    <Grid.Column>
-                        {questions[0].answers[2].answerbody}
-                    </Grid.Column>
-                    <Grid.Column>
-                        {questions[0].answers[3].answerbody}
-                    </Grid.Column>
-                </Grid.Row> */}
-            {/* </Grid>
-            <div>Question {0 + 1} out of {questions.length}</div> */}
-            {/* </div> */} 
-    </>
-
-
-
-
-
-        // <>
         
 
-        //     <div className={'container'}>
-            
-        //         <Grid>
-        //             <Grid.Row columns={1}>
-        //                 <Grid.Column>
-        //                     <div>
-        //                         {questions[activeQuestion].description}
-        //                     </div>
-        //                 </Grid.Column>
-        //             </Grid.Row>
-        //             <Grid.Row columns={2}>
-        //                 <Grid.Column>
-        //                     {questions[activeQuestion].answers[0].description}
-        //                 </Grid.Column>
-        //                 <Grid.Column>
-        //                     {questions[activeQuestion].answers[1].description}
-        //                 </Grid.Column>
-        //             </Grid.Row>
-        //             <Grid.Row columns={2}>
-        //                 <Grid.Column>
-        //                     {questions[activeQuestion].answers[2].description}
-        //                 </Grid.Column>
-        //                 <Grid.Column>
-        //                     {questions[activeQuestion].answers[3].description}
-        //                 </Grid.Column>
-        //             </Grid.Row>
-        //         </Grid>
-        //         <div>Question {activeQuestion + 1} out of {questions.length}</div>
-        //         </div>
-        // </>
+             
+    
     );
+    
 
 }
                 export default Question;
