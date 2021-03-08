@@ -7,10 +7,10 @@ import map from '../assets/cartooneuromap.png';
 
 const Question = ({questions}) => {
 
-    console.log(questions);
+    console.log('qusetins' ,questions);
     console.log('message from question component')
 
-    let activeQuestion = questions[0];
+    const [activeQuestion, setActiveQuestion] = useState(0);
 
     // const [questions, setQuestions] = useState([]);
     // const [activeQuestion, setActiveQuestion] = useState(0);
@@ -66,12 +66,62 @@ const Question = ({questions}) => {
     // }
     // if (activeQuestion){
 return (
-    <h1>Question Component</h1>
+   
+
+<>
+<h1>Hello</h1>
+{//activeQuestion.body
+}
+
+ { questions && questions[activeQuestion] &&
+
+<div className={'container'}>
+          <Grid>
+        <Grid.Row columns={1}>
+        <Grid.Column>
+        <div>
+        
+            {questions[activeQuestion].body}
+        </div>
+        {questions[activeQuestion].answers.map((answer) => {
+            return <button>{answer.answerBody}</button>
+        })
+        
+        }
+        </Grid.Column>
+        </Grid.Row>
+        <Grid.Row columns={2}>
+    <Grid.Column>
+        {//questions[activeQuestion].answers[0]
+        }
+    </Grid.Column>
+    <Grid.Column>
+        
+        {/* {questions[activeQuestion].answers[1].answerbody} */}
+        {questions[activeQuestion].body}
+        </Grid.Column>
+        </Grid.Row>
+        <Grid.Row columns={2}>
+        <Grid.Column>
+        {questions[activeQuestion].body}
+        </Grid.Column>
+        <Grid.Column>
+        {questions[activeQuestion].body}
+        </Grid.Column>
+        </Grid.Row>
+        </Grid>
+        <div>Question {0 + 1} out of {questions.length}</div>
+        </div> 
+}
+        </>
+    
+
 )
+};
     
    
 
 
 
-}
+
 export default Question;

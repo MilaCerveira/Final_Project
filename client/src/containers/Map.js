@@ -11,6 +11,8 @@ import Question from '../components/Question';
 
 const Map = () => {
 
+    let showQuestions = true; 
+
     const [questions, setQuestions] = useState([]);
     // const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState({});
@@ -19,7 +21,11 @@ const Map = () => {
         console.log('getting questions');
         fetch(`http://localhost:8080/questions/?language=Portuguese`)
         .then(res => res.json())
-        .then(data =>  {console.log(data);setQuestions(data)})
+        .then(data =>  {
+            console.log(data);
+            setQuestions(data)
+        })
+        .then(passQuestionsToQuestionComponent())
         // .then(passQuestionsToQuestionComponent());
         console.log(questions)
 
@@ -27,18 +33,14 @@ const Map = () => {
 
     useEffect(async() => {
         getQuestions()
-        .then(passQuestionsToQuestionComponent())
+    
         // getQuestions().then(passQuestionsToQuestionComponent(), printErrorMessage());
       }, []);
 
 
         
 
-        let aPromise = () => {
-
-        getQuestions().then(passQuestionsToQuestionComponent(), printErrorMessage());
-
-        };
+     
 
         
 
@@ -81,10 +83,13 @@ const Map = () => {
 
     let displayQuestionComponent =true;
 
-    if (displayQuestionComponent == true){
+    if (displayQuestionComponent === true){
         console.log("console log from map.js");
         return (
+            <>
+            <h2>Test</h2>
             <Question questions ={questions}/>
+            </>
         )
     }
 }
@@ -98,6 +103,8 @@ const Map = () => {
         <>
         <div className="image-container">
         <img class="image" src={map}/>
+        <h2>Test</h2>
+            <Question questions ={questions}/>
     </div>
 
         <h1>I am the map container</h1>
