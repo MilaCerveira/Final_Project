@@ -63,7 +63,8 @@ export const Question = () => {
 
     const [questions, setQuestions] = useState([]);
     const [activeQuestion, setActiveQuestion] = useState(0);
-    //const [answers, setAnswers] = useState([]);
+    const [selectedAnswer, setSelectedAnswer] = useState({});
+    
     
     
 
@@ -72,13 +73,16 @@ export const Question = () => {
         fetch(`http://localhost:8080/questions/?language=Portuguese`)
         .then(res => res.json())
         .then(data =>  {console.log(data);setQuestions(data)});
+        //.then(data =>  {console.log(data);setQuestions(data)});
 
 
         console.log(questions)
 
+    }
 
-
-
+    
+    const selectAnswer = (input) => {
+        setSelectedAnswer(input)
     }
 
     // for(let i = questions.length - 1; i > 0; i--){
@@ -116,19 +120,48 @@ export const Question = () => {
         <>
         <h1>Hello</h1>
         {questions[activeQuestion] &&
-        <h1>
-        {questions[activeQuestion].answers[0].answerBody}
-      </h1>
+
       
+        
+        
+<div className={'container'}>
+<Grid>
+<Grid.Row columns={1}>
+<Grid.Column>
+<div>
+  {questions[activeQuestion].body}
+</div>
+</Grid.Column>
+</Grid.Row>
+<Grid.Row columns={2}>
+<Grid.Column>
+<button onClick={setSelectedAnswer(questions[activeQuestion].answers[0])}>{questions[activeQuestion].answers[0].answerBody}</button>
+
+{/* <button onClick="selectAnswer(questions[activeQuestion].answers[0])">{questions[activeQuestion].answers[0].answerBody}</button> */}
+</Grid.Column>
+<Grid.Column>
+
+<button>{questions[activeQuestion].answers[1].answerBody}</button>
+</Grid.Column>
+</Grid.Row>
+<Grid.Row columns={2}>
+<Grid.Column>
+<button>{questions[activeQuestion].answers[2].answerBody}</button>
+</Grid.Column>
+<Grid.Column>
+<button>{questions[activeQuestion].answers[3].answerBody}</button>
+</Grid.Column>
+</Grid.Row>
+</Grid>
+<div>Question {0 + 1} out of {questions.length}</div> 
+  </div>
+ 
 }
         
-        
-        </>
-        
 
         
 
-        
+</> 
         
 
              
