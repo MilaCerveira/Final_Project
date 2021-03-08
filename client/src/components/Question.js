@@ -5,9 +5,10 @@ import './Quiz.css'
 import map from '../assets/cartooneuromap.png';
 
 
-export const Question = ({questions}) => {
+const Question = ({questions}) => {
 
     console.log(questions);
+    console.log('message from question component')
 
     let activeQuestion = questions[0];
 
@@ -63,14 +64,12 @@ export const Question = ({questions}) => {
     // if (questions.length === 0) {
     //     return <div>Start your engines...</div>
     // }
-    if (activeQuestion){
-    return (
-        <>
-        <h1>ergaerg</h1>
-        <h1>{activeQuestion.body}</h1>
-        </>
-    )
-    }
+    // if (activeQuestion){
+return (
+    <h1>Question Component</h1>
+)
+    
+   
 
 
 

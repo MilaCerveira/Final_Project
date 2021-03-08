@@ -19,23 +19,30 @@ const Map = () => {
         console.log('getting questions');
         fetch(`http://localhost:8080/questions/?language=Portuguese`)
         .then(res => res.json())
-        .then(data =>  {console.log(data);setQuestions(data)});
-       
-
-
+        .then(data =>  {console.log(data);setQuestions(data)})
+        // .then(passQuestionsToQuestionComponent());
         console.log(questions)
 
     }
 
     useEffect(async() => {
-        getQuestions();
+        getQuestions()
+        .then(passQuestionsToQuestionComponent())
+        // getQuestions().then(passQuestionsToQuestionComponent(), printErrorMessage());
       }, []);
 
-    //   var promise = new Promise(getQuestions(resolve, reject) {
+
         
-    //     resolve(true);
-    //   })
-    //   promise.then(bool => console.log('Bool is true'))
+
+        let aPromise = () => {
+
+        getQuestions().then(passQuestionsToQuestionComponent(), printErrorMessage());
+
+        };
+
+        
+
+
 
     // const [questions, setQuestions] = useState({});
 
@@ -68,13 +75,24 @@ const Map = () => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+
+    const passQuestionsToQuestionComponent = () => {
+        console.log("passing questions to question component");
+
     let displayQuestionComponent =true;
 
     if (displayQuestionComponent == true){
+        console.log("console log from map.js");
         return (
             <Question questions ={questions}/>
         )
     }
+}
+
+    const printErrorMessage = () => {
+        return "Error fetching API data"
+    }
+     
 
     return(
         <>
