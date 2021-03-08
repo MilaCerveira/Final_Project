@@ -10,31 +10,23 @@ const Question = ({questions}) => {
     console.log('qusetins' ,questions);
     console.log('message from question component')
 
-    const [activeQuestion, setActiveQuestion] = useState(0);
-
-    // const [questions, setQuestions] = useState([]);
-    // const [activeQuestion, setActiveQuestion] = useState(0);
-    // const [selectedAnswer, setSelectedAnswer] = useState({});
-    
-    
+    let [questionNumber, setQuestionNumber] = useState(0);
     
 
-    // const getQuestions = () =>{
-    //     console.log('getting questions');
-    //     fetch(`http://localhost:8080/questions/?language=Portuguese`)
-    //     .then(res => res.json())
-    //     .then(data =>  {console.log(data);setQuestions(data)});
-    //     //.then(data =>  {console.log(data);setQuestions(data)});
+    const [activeQuestion, setActiveQuestion] = useState(questionNumber);
 
 
-    //     console.log(questions)
+    const increaseQuestionNumber = (selectedAnswer) => {
+        console.log("used increaseQuestionNumber")
+        setQuestionNumber(questionNumber + 1);
+        console.log(questionNumber);
+        setActiveQuestion(questionNumber);
+        if (selectedAnswer.correct == "true"){
+            console.log("correct answer selected")
+        }
+    }
 
-    // }
 
-    
-    // const selectAnswer = (input) => {
-    //     setSelectedAnswer(input)
-    // }
 
     // for(let i = questions.length - 1; i > 0; i--){
     //     const j = Math.floor(Math.random() * i)
@@ -45,26 +37,6 @@ const Question = ({questions}) => {
 
     //questions.pop();
     
-
-
-    //   useEffect(async() => {
-    //     getQuestions();
-    //   }, []);
-
-
-    // const [activeQuestion, setActiveQuestion] = useState(0);
-    // const [questions, setQuestions] = useState([]);
-    // const [boatLeftPosition, setBoatLeftPosition] = useState(-1);
-    // useEffect(async () => {
-    //     // do the following when component first mounts
-    //     // this is where we will call our  API
-    //     setQuestions(mockData);
-    // }, [])
-
-    // if (questions.length === 0) {
-    //     return <div>Start your engines...</div>
-    // }
-    // if (activeQuestion){
 return (
    
 
@@ -95,7 +67,7 @@ return (
             <br></br>
             <br></br>
         {questions[activeQuestion].answers.map((answer) => {
-            return <button key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+            return <button  key={answer.id}  className={'btn'}>{answer.answerBody}</button>
         })
         
         }
@@ -106,10 +78,9 @@ return (
         
         
         <br></br>
+
         
-        
-        
-        <div>Question {0 + 1} out of {questions.length}</div>
+        <div>Question {questionNumber + 1} out of {questions.length}</div>
         </div> 
 }       
         </>
