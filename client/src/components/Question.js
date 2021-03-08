@@ -95,7 +95,7 @@ return (
             <br></br>
             <br></br>
         {questions[activeQuestion].answers.map((answer) => {
-            return <button  className={'btn'}>{answer.answerBody}</button>
+            return <button key={answer.id}  className={'btn'}>{answer.answerBody}</button>
         })
         
         }
