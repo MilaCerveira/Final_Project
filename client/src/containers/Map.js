@@ -103,7 +103,7 @@ const Map = () => {
         <>
         <div className="image-container">
         <img class="image" src={map}/>
-        <h2>Test</h2>
+        
             <Question questions ={questions}/>
     </div>
 
