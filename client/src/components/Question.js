@@ -82,6 +82,14 @@ return (
         <div ClassName={'questionBody'}>
         
             {questions[activeQuestion].body}
+            
+            
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
         </div>
         {questions[activeQuestion].answers.map((answer) => {
             return <button  className={'btn'}>{answer.answerBody}</button>
@@ -92,6 +100,10 @@ return (
         </Grid.Row>
        
         </Grid>
+        
+        <br></br>
+        
+        
         <div>Question {0 + 1} out of {questions.length}</div>
         </div> 
 }
