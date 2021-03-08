@@ -11,6 +11,32 @@ import Question from '../components/Question';
 
 const Map = () => {
 
+    const [questions, setQuestions] = useState([]);
+    // const [activeQuestion, setActiveQuestion] = useState(0);
+    const [selectedAnswer, setSelectedAnswer] = useState({});
+
+    const getQuestions = () =>{
+        console.log('getting questions');
+        fetch(`http://localhost:8080/questions/?language=Portuguese`)
+        .then(res => res.json())
+        .then(data =>  {console.log(data);setQuestions(data)});
+       
+
+
+        console.log(questions)
+
+    }
+
+    useEffect(async() => {
+        getQuestions();
+      }, []);
+
+    //   var promise = new Promise(getQuestions(resolve, reject) {
+        
+    //     resolve(true);
+    //   })
+    //   promise.then(bool => console.log('Bool is true'))
+
     // const [questions, setQuestions] = useState({});
 
     // const getQuestions = () =>{
@@ -46,7 +72,7 @@ const Map = () => {
 
     if (displayQuestionComponent == true){
         return (
-            <Question/>
+            <Question questions ={questions}/>
         )
     }
 
