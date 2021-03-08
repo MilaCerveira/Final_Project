@@ -87,7 +87,7 @@ const Map = () => {
         console.log("console log from map.js");
         return (
             <>
-            <h2>Test</h2>
+            
             <Question questions ={questions}/>
             </>
         )
