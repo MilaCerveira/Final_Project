@@ -79,12 +79,12 @@ return (
           <Grid>
         <Grid.Row columns={1}>
         <Grid.Column>
-        <div>
+        <div ClassName={'questionBody'}>
         
             {questions[activeQuestion].body}
         </div>
         {questions[activeQuestion].answers.map((answer) => {
-            return <button>{answer.answerBody}</button>
+            return <button  className={'btn'}>{answer.answerBody}</button>
         })
         
         }

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
 
 #root {
   display: flex;
@@ -7,6 +9,16 @@
   align-items: center;
   position: relative;
   height: 100%;
+}
+
+.btn{
+  background-color:#0099CC;
+  font-size: 10px;
+  color: white;
+}
+.questionBody{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
 }
 
 .image-container {
@@ -41,6 +53,11 @@
     padding-top:120px;
     padding-bottom:30px;
     overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:black;
+    font-size: 15px;
+    
+    
 }
 .boat {
   animation: boatAnimation 25s;
