@@ -14,24 +14,24 @@ const Question = ({questions}) => {
 
     const [activeQuestion, setActiveQuestion] = useState(questionNumber);
     
-    useEffect(() => {
+    useEffect(() => {       //this useEffect prevents the first question being repeated
         console.log('useEffect in use in Question component')
         increaseQuestionNumber();
     }, []);
 
 
-    // useEffect(() => {
+    // useEffect(() => {   //Why is this triggering an infinite loop?
     //     console.log('useEffect in use in Question component')
     //     increaseQuestionNumber();
     // }, [questionNumber]);
 
 
-    useEffect(() => {
+    useEffect(() => {          //this does not trigger an infinite loop (as long as no argument is passed to increasQuestionNumber)
             //a function for increasing the question number
         increaseQuestionNumber()
     }, [selectedAnswer])
 
-    // git c
+    
     const increaseQuestionNumber = (selectedAnswer) => {
         console.log("used increaseQuestionNumber")
         setQuestionNumber(questionNumber + 1); // this is triggering infinite recursion!!!!!
@@ -45,6 +45,7 @@ const Question = ({questions}) => {
     }
         
     const selectAnswer = (input) => {
+        console.log('using selectAnswer function')
         setSelectedAnswer(input)
     }
 
@@ -57,6 +58,8 @@ const Question = ({questions}) => {
     //   }
 
     //questions.pop();
+
+ 
     
 
 return (
@@ -86,8 +89,8 @@ return (
             <br></br>
             <br></br>
         {questions[activeQuestion].answers.map((answer) => {
-                        // return <button onClick ={selectAnswer({answer})} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
-                        return <button onClick ={increaseQuestionNumber} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+                         return <button onClick ={selectAnswer(answer)} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+                        //return <button onClick ={increaseQuestionNumber} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
                         //return <button  className={'btn'}>{answer.answerBody}</button>
         })
         
