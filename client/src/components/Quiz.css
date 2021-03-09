@@ -64,8 +64,8 @@
     position: fixed;
     padding-top:80px;
     padding-bottom:20px;
-    
-    
+    color: black;
+    text-shadow: 2px 2px 4px white;
     margin: 10% auto;
     position: relative;
     overflow: hidden;
