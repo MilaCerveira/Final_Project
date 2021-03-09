@@ -16,14 +16,29 @@
   font-size: 10px;
   color: white;
   padding: 5px;
+  border-radius: 5px;
   
+}
+.btn:hover{
+  background:#6EB4D1;
+  border-color:#6EB4D1;
+  border-radius: 5px;
+  color:white;
 }
 
 .top-button{
   background-color:#0099CC;
+  border-color: #0099CC;
   font-size: 10px;
   color: white;
   padding: 5px;
+  border-radius: 5px;
+}
+.top-button:hover{
+  background:#6EB4D1;
+  border-color:#6EB4D1;
+  border-radius: 5px;
+  color:white;
 }
 .qs{
   font-family: 'Roboto Condensed', sans-serif;
@@ -87,11 +102,11 @@ body {
 
   @keyframes boatAnimation{
     50% {
-      transform: translate(20px, -420px);
+      transform: translate(20px, -460px);
     }
   
       
       50% {
-        transform: translate(-400x, -20px);
+        transform: translate(-420x, -40px);
   }
 }
