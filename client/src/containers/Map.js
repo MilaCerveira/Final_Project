@@ -73,9 +73,9 @@ const Map = () => {
 
 
 
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+    // function sleep(ms) {
+    //     return new Promise(resolve => setTimeout(resolve, ms));
+    // }
 
 
     const passQuestionsToQuestionComponent = () => {
@@ -101,13 +101,16 @@ const Map = () => {
 
     return(
         <>
-        <div className="image-container">
-        <img class="image" src={map}/>
         
-            <Question questions ={questions}/>
-    </div>
+       
+        
+        
+            <Question questions ={questions}/> 
+    
 
-        <h1>I am the map container</h1>
+        
+        <img class="boat" src={boat}/>
+        
         </>
     )
 
