@@ -10,13 +10,36 @@ const Question = ({questions}) => {
     console.log('qusetins' ,questions);
     console.log('message from question component')
 
-    const [activeQuestion, setActiveQuestion] = useState(0);
+    let [questionNumber, setQuestionNumber] = useState(0);
+    const [activeQuestion, setActiveQuestion] = useState(questionNumber);
 
     // const [questions, setQuestions] = useState([]);
     // const [activeQuestion, setActiveQuestion] = useState(0);
     // const [selectedAnswer, setSelectedAnswer] = useState({});
     
-    
+    useEffect(() => {
+        console.log('useEffect in use in Question component')
+        increaseQuestionNumber();
+    }, []);
+
+
+    useEffect(() => {
+        console.log('useEffect in use in Question component')
+        increaseQuestionNumber();
+    }, questionNumber);
+
+
+    const increaseQuestionNumber = (selectedAnswer) => {
+        console.log("used increaseQuestionNumber")
+        setQuestionNumber(questionNumber + 1);
+        console.log(questionNumber);
+        setActiveQuestion(questionNumber);
+        // if (selectedAnswer.correct == "true"){
+        //     console.log("correct answer selected")
+        // }
+    }
+        
+
     
 
     // const getQuestions = () =>{
@@ -91,7 +114,9 @@ return (
             <br></br>
             <br></br>
         {questions[activeQuestion].answers.map((answer) => {
-            return <button  className={'btn'}>{answer.answerBody}</button>
+                        //return <button onClick ={increaseQuestionNumber({answer})} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+                        return <button onClick ={increaseQuestionNumber} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+                        //return <button  className={'btn'}>{answer.answerBody}</button>
         })
         
         }
@@ -105,7 +130,7 @@ return (
         
         
         
-        <div>Question {0 + 1} out of {questions.length}</div>
+        <div>Question {questionNumber} out of {questions.length}</div>
         </div> 
 }       
         </>
