@@ -18,9 +18,16 @@
   padding: 5px;
   
 }
+
+.top-button{
+  background-color:#0099CC;
+  font-size: 10px;
+  color: white;
+  padding: 5px;
+}
 .qs{
   font-family: 'Roboto Condensed', sans-serif;
-  color: blue;
+  
 
 }
 
@@ -54,7 +61,7 @@
     width:30px; 
     height: auto;
     animation-iteration-count: infinite;
-    position: sticky; top: 0px;
+    
     
     
 }
@@ -63,7 +70,7 @@
 body {
     background-color: #121212;
     color: white;
-    padding: 40px;
+    padding: 50px;
     font-family: Arial;
     text-align: center;
     background: url('../assets/cartooneuromap.png') no-repeat center center fixed; 
@@ -75,6 +82,8 @@ body {
     justify-content: center;
   
   }
+
+  
 
   @keyframes boatAnimation{
     50% {

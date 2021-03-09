@@ -108,7 +108,7 @@ const Map = () => {
         
        
         
-        <button onClick={() => setShowQuestions(!showQuestions)}>{showQuestions ? 'Hide Quiz' : 'Show Quiz'}</button>
+        <button class='top-button' onClick={() => setShowQuestions(!showQuestions)}>{showQuestions ? 'Quit Quiz' : ' Start Quiz'}</button>
         { showQuestions &&
             <Question questions ={questions}/> 
             }
