@@ -81,7 +81,7 @@ return (
             
             
         </div>
-         <br></br>
+            <br></br>
             <br></br>
             <br></br>
             <br></br>
@@ -102,7 +102,7 @@ return (
         
         
         
-        <div>Question {questionNumber} out of {questions.length}</div>
+        <div className={'len'}>Question {questionNumber} out of {questions.length}</div>
         </div> 
 }       
         </>

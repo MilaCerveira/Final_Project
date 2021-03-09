@@ -26,6 +26,13 @@
   color:white;
 }
 
+.len{
+  position: absolute; 
+  top: 20%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
 .top-button{
   background-color:#0099CC;
   border-color: #0099CC;
