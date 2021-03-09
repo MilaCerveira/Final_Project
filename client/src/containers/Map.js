@@ -11,11 +11,12 @@ import Question from '../components/Question';
 
 const Map = () => {
 
-    let showQuestions = true; 
+    let [showQuestions, setShowQuestions] = useState(false); 
 
     const [questions, setQuestions] = useState([]);
     // const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState({});
+  
 
 
     const getQuestions = () =>{
@@ -82,9 +83,9 @@ const Map = () => {
     const passQuestionsToQuestionComponent = () => {
         console.log("passing questions to question component");
 
-    let displayQuestionComponent =true;
+ 
 
-    if (displayQuestionComponent === true){
+    if (showQuestions === true){
         console.log("console log from map.js");
         return (
             <>
@@ -98,6 +99,8 @@ const Map = () => {
     const printErrorMessage = () => {
         return "Error fetching API data"
     }
+
+
      
 
     return(
@@ -105,8 +108,10 @@ const Map = () => {
         
        
         
-        
+        <button onClick={() => setShowQuestions(!showQuestions)}>{showQuestions ? 'Hide Quiz' : 'Show Quiz'}</button>
+        { showQuestions &&
             <Question questions ={questions}/> 
+            }
     
 
         
