@@ -130,3 +130,15 @@
              
     
     );
+
+
+
+    {questions[activeQuestion].answers.map((answer) => {
+        return <button onClick ={assignNonStateAnswer(1)} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+        //return <button onClick ={selectAnswer(answer)} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+
+       //return <button onClick ={increaseQuestionNumber} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+       //return <button  className={'btn'}>{answer.answerBody}</button>
+})
+
+}
