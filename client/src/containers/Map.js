@@ -17,6 +17,7 @@ const Map = () => {
     // const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState({});
 
+
     const getQuestions = () =>{
         console.log('getting questions');
         fetch(`http://localhost:8080/questions/?language=Portuguese`)
