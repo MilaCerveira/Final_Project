@@ -21,6 +21,8 @@ const Question = ({questions}) => {
     console.log('Questions in question component: ' ,questions);
     let [selectedAnswer, setSelectedAnswer] = useState({});
     let [questionNumber, setQuestionNumber] = useState(0);
+    let [score, setScore] = useState(0);
+    
 
     const [activeQuestion, setActiveQuestion] = useState(questionNumber);
 
@@ -69,6 +71,7 @@ const Question = ({questions}) => {
             console.log("used useEffect")
             setQuestionNumber(questionNumber + 1); // this is triggering infinite recursion!!!!!
             console.log(questionNumber);
+            checkIfAnswerIsCorrect(selectedAnswer);
             setActiveQuestion(questionNumber);    
         //increaseQuestionNumber()
     }, [selectedAnswer])
@@ -85,6 +88,16 @@ const Question = ({questions}) => {
         //     console.log("correct answer selected")
         // }
     }
+
+    const checkIfAnswerIsCorrect = () => {
+        if (selectedAnswer.correct == true) {
+            setScore(score + 10)
+        }
+        else if (selectedAnswer.correct == false) {setScore(score + 1)}
+        console.log("score = ",score);
+    };
+
+
         
     const selectAnswer = (input) => {
         console.log('using selectAnswer function')
@@ -111,14 +124,17 @@ const Question = ({questions}) => {
 
     const func2 = () => {
         setSelectedAnswer(questions[activeQuestion].answers[1])
+        //checkIfAnswerIsCorrect(selectedAnswer);
     }
 
     const func3 = () => {
         setSelectedAnswer(questions[activeQuestion].answers[2])
+        //checkIfAnswerIsCorrect(selectedAnswer);
     }
 
     const func4 = () => {
         setSelectedAnswer(questions[activeQuestion].answers[3])
+        //checkIfAnswerIsCorrect(selectedAnswer);
     }
 
 
