@@ -156,7 +156,7 @@ return (
    
 
 <>
-<h1>some message</h1>
+
 {//activeQuestion.body
 }
 
@@ -169,7 +169,7 @@ return (
         <div className={'qs'}>
         
             {questions[activeQuestion].body}
-            <h2>{score}</h2>
+            <div>{score}</div>
             
             
             
@@ -177,9 +177,8 @@ return (
         </div>
         
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            
+            
 
 
         
@@ -187,7 +186,8 @@ return (
                         <button onClick ={func2} className={'btn'}>2</button>
                         <button onClick ={func3} className={'btn'}>3</button>
                         <button onClick ={func4} className={'btn'}>4</button>
-                        <button onClick={moveToNextQuestion}  className={'btn'}>Next Question</button>
+                        <br></br>
+                        <button onClick={moveToNextQuestion}  className={'btn'}>Next</button>
                         {/* <button onClick ={printTestMessage} className={'btn'}>Print test message</button>
                         <button onClick ={printTestMessagewithArgument(1)} className={'btn'}>Print test message with argument</button> */}
 
