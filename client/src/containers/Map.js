@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import boat from '../assets/boat1.png';
 import shark from '../assets/shark.png';
+import help from '../assets/help.png';
 import map from '../assets/cartooneuromap.png';
 import horn2 from '../assets/horn2.mp3';
 import Question from '../components/Question';
 import tug1 from '../assets/tug.mp3';
 import squeak1 from '../assets/squeak.mp3';
 import score1 from '../assets/score.mp3';
+import biggerboat from '../assets/biggerboat.mp3';
 
 
 const Map = () => {
@@ -110,6 +112,10 @@ const Map = () => {
         jaws.play();
     }
 
+    const playHelp = () => {
+        const jaws = new Audio(biggerboat);
+        jaws.play();
+    }
      
 
     return(
@@ -122,10 +128,13 @@ const Map = () => {
             <>
                 <Question questions ={questions}/> 
                 <img class="boat" src={boat} onClick={playHorn}/>
+                <img class="shark" src={shark} onClick={playJaws}/>
+                <img class="help" src={help} onClick={playHelp}/>
             </>
             }
     
-    <img class="shark" src={shark} onClick={playJaws}/>
+    
+    
         
        
         
