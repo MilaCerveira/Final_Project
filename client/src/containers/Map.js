@@ -146,7 +146,7 @@ const Map = () => {
                 <img class="boat" src={boat} onClick={playHorn}/>
                 <img class="shark" src={shark} onClick={playJaws}/>
                 <img class="help" src={help} onClick={playHelp}/>
-                <img class= "float" src={duck} onClick={playAbba}/>
+                <img class= "abbaBaby" src={duck} onClick={playAbba}/>
             </>
             }
     

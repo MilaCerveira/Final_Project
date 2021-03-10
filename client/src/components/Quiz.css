@@ -85,17 +85,24 @@
 }
 .boat{
     float: left;
-    animation: boatAnimation 18s;
+    animation: boatAnimation 30s;
     width:30px; 
     height: auto;
     animation-iteration-count: infinite;
-    
-    
-    
+      
+}
+.abbaBaby{
+  cursor:pointer;
 }
 
 .gremlin{
   float: right;
+}
+.shark{
+  animation-iteration-count: infinite;
+  animation: sharkAnimation 36s;
+  width:30px; 
+  height: auto;
 }
 
 
@@ -126,6 +133,21 @@ body {
       transform: translate(0px, -410px) 
     
     }
+    
+  }
+
+  @keyframes sharkAnimation{
+    
+    
+    50% {
+      transform: translate(10px, 0px) 
+    
+    }
+    50% {
+      transform: translate(500px, 0px) 
+    
+    }
+    
     
   }
 
