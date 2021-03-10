@@ -9,6 +9,8 @@ import tug1 from '../assets/tug.mp3';
 import squeak1 from '../assets/squeak.mp3';
 import score1 from '../assets/score.mp3';
 import biggerboat from '../assets/biggerboat.mp3';
+import alex from '../assets/alex.mp3';
+import gremlin from '../assets/gremlin.png';
 
 
 const Map = () => {
@@ -116,6 +118,11 @@ const Map = () => {
         const jaws = new Audio(biggerboat);
         jaws.play();
     }
+
+    const playAlex = () => {
+        const gremlin = new Audio(alex);
+        gremlin.play();
+    }
      
 
     return(
@@ -130,10 +137,11 @@ const Map = () => {
                 <img class="boat" src={boat} onClick={playHorn}/>
                 <img class="shark" src={shark} onClick={playJaws}/>
                 <img class="help" src={help} onClick={playHelp}/>
+                
             </>
             }
     
-    
+    <img class ='gremlin' src={gremlin} onClick={playAlex} />
     
         
        
