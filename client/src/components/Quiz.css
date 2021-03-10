@@ -100,7 +100,7 @@
 }
 .shark{
   animation-iteration-count: infinite;
-  animation: sharkAnimation 36s;
+  animation: sharkAnimation 46gs;
   width:30px; 
   height: auto;
 }
@@ -139,11 +139,11 @@ body {
   @keyframes sharkAnimation{
     
     
-    50% {
+    60% {
       transform: translate(10px, 0px) 
     
     }
-    50% {
+    40% {
       transform: translate(500px, 0px) 
     
     }
