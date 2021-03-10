@@ -100,7 +100,7 @@
 }
 .shark{
   animation-iteration-count: infinite;
-  animation: sharkAnimation 46gs;
+  animation: sharkAnimation 46s;
   width:30px; 
   height: auto;
 }
