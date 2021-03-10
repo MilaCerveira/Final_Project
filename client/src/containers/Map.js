@@ -3,6 +3,7 @@ import boat from '../assets/boat1.png'
 import map from '../assets/cartooneuromap.png';
 import horn2 from '../assets/horn2.mp3';
 import Question from '../components/Question';
+import tug1 from '../assets/tug.mp3';
 
 
 const Map = () => {
@@ -97,7 +98,7 @@ const Map = () => {
     }
 
     const playHorn = () => {
-        const hornSound = new Audio(horn2);
+        const hornSound = new Audio(tug1);
         hornSound.play();
     }
 
