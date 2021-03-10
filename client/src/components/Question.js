@@ -8,7 +8,7 @@ import map from '../assets/cartooneuromap.png';
 
 //Update- the map is not triggering it. Having different buttons already renders the page, which we don't want
 
-//currently trying to put the 'return' which renders the page, in a useEffect, with a [] parameter to only render once, when the page has loaded
+//currently trying to put the 'return' which renders the page, in a useEffect, with a [] parameter to only render once, when the page has loaded. UPDATE- didn't work
 
 // line 126 shows that a button with a function which takes an argument will cause an automatic re-render
 
@@ -23,10 +23,10 @@ const Question = ({questions}) => {
 
     let nonStateAnswer = {};
     const assignNonStateAnswer = (value) => {
-        //nonStateAnswer = questions[activeQuestion].answers[0];
-        //console.log("the value of nonStateAnswer is ", nonStateAnswer)
-        setSelectedAnswer(questions[activeQuestion].answers[0])
-        console.log("the value of nonStateAnswer is ", selectedAnswer)
+        nonStateAnswer = questions[activeQuestion].answers[0];
+        console.log("the value of nonStateAnswer is ", nonStateAnswer)
+        // setSelectedAnswer(questions[activeQuestion].answers[0])   // this line causes an infinite render crash
+        // console.log("the value of nonStateAnswer is ", selectedAnswer)
     }
 
     const printTestMessage = () => {
@@ -34,7 +34,7 @@ const Question = ({questions}) => {
     }
 
     const printTestMessagewithArgument = (argument) => {
-        console.log('test message from printTestMessagewithArgument')
+        console.log('test message from printTestMessagewithArgument', argument)
     }
 
     
@@ -122,12 +122,17 @@ return (
             <br></br>
             <br></br>
         
-                        <button onClick ={assignNonStateAnswer()} className={'btn'}>1</button>
-                        <button onClick ={assignNonStateAnswer(1)} className={'btn'}>2</button>
-                        <button onClick ={assignNonStateAnswer(1)} className={'btn'}>3</button>
-                        <button onClick ={assignNonStateAnswer(1)} className={'btn'}>4</button>
-                        <button onClick ={printTestMessage} className={'btn'}>Print test message</button>
-                        <button onClick ={printTestMessagewithArgument(1)} className={'btn'}>Print test message with argument</button>
+                        {/* <button onClick ={assignNonStateAnswer()} className={'btn'}>1</button>
+                        <button onClick ={assignNonStateAnswer()} className={'btn'}>2</button>
+                        <button onClick ={assignNonStateAnswer()} className={'btn'}>3</button>
+                        <button onClick ={assignNonStateAnswer()} className={'btn'}>4</button> */}
+                        {/* <button onClick ={printTestMessage} className={'btn'}>Print test message</button>
+                        <button onClick ={printTestMessagewithArgument(1)} className={'btn'}>Print test message with argument</button> */}
+
+                        {/* some buttons with no functions attached! */}
+                         <button  className={'btn'}>no function button 1</button>
+                        <button  className={'btn'}>no function button 2</button>
+
         
                          
 
