@@ -4,6 +4,7 @@ import map from '../assets/cartooneuromap.png';
 import horn2 from '../assets/horn2.mp3';
 import Question from '../components/Question';
 import tug1 from '../assets/tug.mp3';
+import squeak1 from '../assets/squeak.mp3';
 
 
 const Map = () => {
