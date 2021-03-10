@@ -100,7 +100,7 @@
 }
 .shark{
   animation-iteration-count: infinite;
-  animation: sharkAnimation 46s;
+  animation: sharkAnimation 48gaas;
   width:30px; 
   height: auto;
 }
@@ -144,7 +144,7 @@ body {
     
     }
     40% {
-      transform: translate(500px, 0px) 
+      transform: translate(-500px, 0px) 
     
     }
     
