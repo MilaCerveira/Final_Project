@@ -11,6 +11,8 @@ import score1 from '../assets/score.mp3';
 import biggerboat from '../assets/biggerboat.mp3';
 import alex from '../assets/alex.mp3';
 import gremlin from '../assets/gremlin.png';
+import life from '../assets/life.png';
+import sos from '../assets/sos.png';
 
 
 const Map = () => {
@@ -141,7 +143,7 @@ const Map = () => {
             </>
             }
     
-    <img class ='gremlin' src={gremlin} onClick={playAlex} />
+    <img class ='gremlin' src={sos} onClick={playAlex} />
     
         
        
