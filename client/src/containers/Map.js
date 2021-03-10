@@ -85,15 +85,15 @@ const Map = () => {
 
  
 
-    if (showQuestions === true){
-        console.log("console log from map.js");
-        return (
-            <>
+    // if (showQuestions === true){
+    //     console.log("console log from map.js");
+    //     return (
+    //         <>
             
-            <Question questions ={questions}/>
-            </>
-        )
-    }
+    //         <Question questions ={questions}/>
+    //         </>
+    //     )
+    // }
 }
 
     const printErrorMessage = () => {

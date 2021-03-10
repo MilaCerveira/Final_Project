@@ -12,10 +12,13 @@ import map from '../assets/cartooneuromap.png';
 
 // line 126 shows that a button with a function which takes an argument will cause an automatic re-render
 
+//ps the map function that creates the answer buttons has been moved to junk.js
+
+// deleting our 'promise fix' ( { questions && questions[activeQuestion] &&) does not solve the problem
+
 const Question = ({questions}) => {
 
-    console.log('qusetins' ,questions);
-    console.log('message from question component')
+    console.log('Questions in question component: ' ,questions);
     let [selectedAnswer, setSelectedAnswer] = useState({});
     let [questionNumber, setQuestionNumber] = useState(0);
 
@@ -77,10 +80,10 @@ const Question = ({questions}) => {
         // }
     }
         
-    // const selectAnswer = (input) => {
-    //     console.log('using selectAnswer function')
-    //     setSelectedAnswer(input)
-    // }
+    const selectAnswer = (input) => {
+        console.log('using selectAnswer function')
+        //setSelectedAnswer(input)
+    }
 
 
     // for(let i = questions.length - 1; i > 0; i--){
@@ -99,7 +102,7 @@ return (
    
 
 <>
-
+<h1>some message</h1>
 {//activeQuestion.body
 }
 
@@ -109,7 +112,7 @@ return (
           <Grid>
         <Grid.Row columns={1}>
         <Grid.Column>
-        <div ClassName={'qs'}>
+        <div className={'qs'}>
         
             {questions[activeQuestion].body}
             
@@ -117,10 +120,21 @@ return (
             
             
         </div>
+        
             <br></br>
             <br></br>
             <br></br>
             <br></br>
+
+            {questions[activeQuestion].answers.map((answer) => {
+        //return <button onClick ={assignNonStateAnswer(1)} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+        //return <button onClick ={selectAnswer} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+
+       return <button onClick ={increaseQuestionNumber} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
+       //return <button  className={'btn'}>{answer.answerBody}</button>
+})
+
+}
         
                         {/* <button onClick ={assignNonStateAnswer()} className={'btn'}>1</button>
                         <button onClick ={assignNonStateAnswer()} className={'btn'}>2</button>
@@ -130,8 +144,8 @@ return (
                         <button onClick ={printTestMessagewithArgument(1)} className={'btn'}>Print test message with argument</button> */}
 
                         {/* some buttons with no functions attached! */}
-                         <button  className={'btn'}>no function button 1</button>
-                        <button  className={'btn'}>no function button 2</button>
+                         {/* <button  className={'btn'}>no function button 1</button>
+                        <button  className={'btn'}>no function button 2</button> */}
 
         
                          
@@ -149,6 +163,7 @@ return (
         
         <div className={'len'}>Question {questionNumber} out of {questions.length}</div>
         </div> 
+        
 }       
         </>
     
