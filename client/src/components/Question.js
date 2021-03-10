@@ -22,6 +22,9 @@ const Question = ({questions}) => {
     let [selectedAnswer, setSelectedAnswer] = useState({});
     let [questionNumber, setQuestionNumber] = useState(0);
     let [score, setScore] = useState(0);
+    let [currentAnswerOutcome, setCurrentAnswerOutcome] = useState("");
+    
+    
     
 
     const [activeQuestion, setActiveQuestion] = useState(questionNumber);
@@ -69,10 +72,10 @@ const Question = ({questions}) => {
     useEffect(async() => {          //this does not trigger an infinite loop (as long as no argument is passed to increasQuestionNumber)
             //a function for increasing the question number
             console.log("used useEffect")
-            setQuestionNumber(questionNumber + 1); // this is triggering infinite recursion!!!!!
+            //setQuestionNumber(questionNumber + 1); // this is triggering infinite recursion!!!!!
             console.log(questionNumber);
             checkIfAnswerIsCorrect(selectedAnswer);
-            setActiveQuestion(questionNumber);    
+            //setActiveQuestion(questionNumber);    
         //increaseQuestionNumber()
     }, [selectedAnswer])
 
@@ -80,16 +83,23 @@ const Question = ({questions}) => {
     const increaseQuestionNumber = (selectedAnswer) => {
         console.log("used increaseQuestionNumber")
         setQuestionNumber(questionNumber + 1); // this is triggering infinite recursion!!!!!
-        console.log(questionNumber);
-        setActiveQuestion(questionNumber);
-        // if (selectedAnswer.correct == "true"){
-        //     score += 1
+    //     console.log(questionNumber);
+    //     setActiveQuestion(questionNumber);
+    //     if (selectedAnswer.correct == "true"){
+    //         score += 1
 
-        //     console.log("correct answer selected")
-        // }
+    //         console.log("correct answer selected")
+    //     }
+    }
+
+    const moveToNextQuestion = () => {
+        setQuestionNumber(questionNumber + 1); // this is triggering infinite recursion!!!!!
+        //     console.log(questionNumber);
+            setActiveQuestion(questionNumber)
     }
 
     const checkIfAnswerIsCorrect = () => {
+        setCurrentAnswerOutcome(selectedAnswer.outcome)
         if (selectedAnswer.correct == true) {
             setScore(score + 10)
         }
@@ -159,6 +169,7 @@ return (
         <div className={'qs'}>
         
             {questions[activeQuestion].body}
+            <h2>{score}</h2>
             
             
             
@@ -176,6 +187,7 @@ return (
                         <button onClick ={func2} className={'btn'}>2</button>
                         <button onClick ={func3} className={'btn'}>3</button>
                         <button onClick ={func4} className={'btn'}>4</button>
+                        <button onClick={moveToNextQuestion}  className={'btn'}>Next Question</button>
                         {/* <button onClick ={printTestMessage} className={'btn'}>Print test message</button>
                         <button onClick ={printTestMessagewithArgument(1)} className={'btn'}>Print test message with argument</button> */}
 
@@ -183,7 +195,8 @@ return (
                          {/* <button  className={'btn'}>no function button 1</button>
                         <button  className={'btn'}>no function button 2</button> */}
 
-        
+        {/* <h3>Outcome will go here</h3> */}
+        <h3>{currentAnswerOutcome}</h3>
                          
 
 
