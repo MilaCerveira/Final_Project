@@ -11,7 +11,10 @@ const Map = () => {
     const [questions, setQuestions] = useState([]);
     // const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState({});
-  
+    const [listOfCountries, setListOfCountries] = useState([]);
+
+    //setListOfCountries(["Portugal", "Spain", "France", "Italy", "Austria", "Hungary", "Romania"])
+
 
 
     const getQuestions = () =>{
