@@ -84,7 +84,7 @@
     float: left;
     animation: boatAnimation 18s;
     width:30px; 
-    height: auto;
+    /* height: auto; */
     animation-iteration-count: infinite;
     
     
@@ -108,7 +108,7 @@ body {
     font-family: "Montserrat", sans-serif;
      
   
-  }
+}
 
   
 
@@ -116,11 +116,11 @@ body {
     
     
     50% {
-      transform: translate(-20px, -470px) 
+      transform: translate(0px, -410px) 
     
     }
     
-}
+  }
 
         
   

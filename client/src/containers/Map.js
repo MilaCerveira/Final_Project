@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import boat from '../assets/boat1.png'
 import map from '../assets/cartooneuromap.png';
+import horn2 from '../assets/horn2.mp3';
 import Question from '../components/Question';
 
 
@@ -95,6 +96,10 @@ const Map = () => {
         return "Error fetching API data"
     }
 
+    const playHorn = () => {
+        const hornSound = new Audio(horn2);
+        hornSound.play();
+    }
 
      
 
@@ -105,12 +110,15 @@ const Map = () => {
         
         <button class='top-button' onClick={() => setShowQuestions(!showQuestions)}>{showQuestions ? 'Quit Quiz' : ' Start Quiz'}</button>
         { showQuestions &&
-            <Question questions ={questions}/> 
+            <>
+                <Question questions ={questions}/> 
+                <img class="boat" src={boat} onClick={playHorn}/>
+            </>
             }
     
 
         
-        <img class="boat" src={boat}/>
+       
         
         </>
     )
