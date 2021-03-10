@@ -13,6 +13,9 @@ import alex from '../assets/alex.mp3';
 import gremlin from '../assets/gremlin.png';
 import life from '../assets/life.png';
 import sos from '../assets/sos.png';
+import ab from '../assets/ab.mp3';
+import float from '../assets/pool-floats.png';
+import duck from '../assets/duck.png';
 
 
 const Map = () => {
@@ -126,6 +129,10 @@ const Map = () => {
         gremlin.play();
     }
      
+    const playAbba = () => {
+        const abba = new Audio(ab);
+        abba.play();
+    }
 
     return(
         <>
@@ -139,11 +146,12 @@ const Map = () => {
                 <img class="boat" src={boat} onClick={playHorn}/>
                 <img class="shark" src={shark} onClick={playJaws}/>
                 <img class="help" src={help} onClick={playHelp}/>
-                
+                <img class= "float" src={duck} onClick={playAbba}/>
             </>
             }
     
     <img class ='gremlin' src={sos} onClick={playAlex} />
+    
     
         
        
