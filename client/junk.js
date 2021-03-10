@@ -142,3 +142,6 @@
 })
 
 }
+
+
+{questions[activeQuestion].answers.map((answer) => {

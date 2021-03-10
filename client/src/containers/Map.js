@@ -4,11 +4,6 @@ import map from '../assets/cartooneuromap.png';
 import Question from '../components/Question';
 
 
-
-
-
-
-
 const Map = () => {
 
     let [showQuestions, setShowQuestions] = useState(false); 

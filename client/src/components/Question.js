@@ -41,7 +41,7 @@ const Question = ({questions}) => {
     }
 
     
-    useEffect(() => {       //this useEffect prevents the first question being repeated
+    useEffect(async() => {       //this useEffect prevents the first question being repeated
         console.log('useEffect in use in Question component')
         increaseQuestionNumber();
     }, []);
@@ -52,13 +52,19 @@ const Question = ({questions}) => {
     // })
 
 
-    // useEffect(() => {   //Why is this triggering an infinite loop?
+    // useEffect(async() => {   //This triggering an infinite loop?
     //     console.log('useEffect in use in Question component')
     //     increaseQuestionNumber();
     // }, [questionNumber]);
 
 
-    useEffect(() => {          //this does not trigger an infinite loop (as long as no argument is passed to increasQuestionNumber)
+        useEffect(async() => {   //This triggering an infinite loop?
+        console.log('useEffect[questionNumber] in use in Question component')
+        // increaseQuestionNumber();
+    }, [questionNumber]);
+
+
+    useEffect(async() => {          //this does not trigger an infinite loop (as long as no argument is passed to increasQuestionNumber)
             //a function for increasing the question number
             console.log("used useEffect")
             setQuestionNumber(questionNumber + 1); // this is triggering infinite recursion!!!!!
@@ -74,7 +80,7 @@ const Question = ({questions}) => {
         console.log(questionNumber);
         setActiveQuestion(questionNumber);
         // if (selectedAnswer.correct == "true"){
-            // score += 1
+        //     score += 1
 
         //     console.log("correct answer selected")
         // }
@@ -94,6 +100,28 @@ const Question = ({questions}) => {
     //   }
 
     //questions.pop();
+
+
+    const func1 = () => {
+        //console.group("before assignment in func1", selectedAnswer)
+        setSelectedAnswer(questions[activeQuestion].answers[0])
+        //(console.group("after assignment in func1", selectedAnswer)
+        //checkIfAnswerIsCorrect(selectedAnswer);
+    }
+
+    const func2 = () => {
+        setSelectedAnswer(questions[activeQuestion].answers[1])
+    }
+
+    const func3 = () => {
+        setSelectedAnswer(questions[activeQuestion].answers[2])
+    }
+
+    const func4 = () => {
+        setSelectedAnswer(questions[activeQuestion].answers[3])
+    }
+
+
 
  
 // const displayPage = () => {
@@ -126,20 +154,12 @@ return (
             <br></br>
             <br></br>
 
-            {questions[activeQuestion].answers.map((answer) => {
-        //return <button onClick ={assignNonStateAnswer(1)} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
-        //return <button onClick ={selectAnswer} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
 
-       return <button onClick ={increaseQuestionNumber} key={answer.id}  className={'btn'}>{answer.answerBody}</button>
-       //return <button  className={'btn'}>{answer.answerBody}</button>
-})
-
-}
         
-                        {/* <button onClick ={assignNonStateAnswer()} className={'btn'}>1</button>
-                        <button onClick ={assignNonStateAnswer()} className={'btn'}>2</button>
-                        <button onClick ={assignNonStateAnswer()} className={'btn'}>3</button>
-                        <button onClick ={assignNonStateAnswer()} className={'btn'}>4</button> */}
+                        <button onClick ={func1} className={'btn'}>{questions[activeQuestion].answers[0].answerBody}</button>
+                        <button onClick ={func2} className={'btn'}>2</button>
+                        <button onClick ={func3} className={'btn'}>3</button>
+                        <button onClick ={func4} className={'btn'}>4</button>
                         {/* <button onClick ={printTestMessage} className={'btn'}>Print test message</button>
                         <button onClick ={printTestMessagewithArgument(1)} className={'btn'}>Print test message with argument</button> */}
 
