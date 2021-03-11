@@ -202,21 +202,17 @@ else {
           
 
         </div>
-        <h1>Score page</h1>
-        <h2>Well done! Your final score is: {score}</h2>
-        <h2>Your score in Portuguese is: {portugueseScore}</h2>
-        <h2>Your score in Spanish is: {spanishScore}</h2>
-        <h2>Your score in French is: {frenchScore}</h2>
-        <h4>Your score in German is: {germanScore}</h4>
-        <h2>Your score in Hungarian is: {hungarianScore}</h2>
-        <h2>Your score in Italian is: {italianScore}</h2>
-        <h2>Your score in Romanian is: {romanianScore}</h2>
-        <h4>Your score in Russian is: {russianScore}</h4>
         
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+        <h5>Well done! Your final score is: {score}</h5>
+        <h5>Your score in Portuguese is: {portugueseScore}</h5>
+        <h5>Your score in Spanish is: {spanishScore}</h5>
+        <h5>Your score in French is: {frenchScore}</h5>
+        <h5>Your score in German is: {germanScore}</h5>
+        <h5>Your score in Hungarian is: {hungarianScore}</h5>
+        <h5>Your score in Italian is: {italianScore}</h5>
+        <h5>Your score in Romanian is: {romanianScore}</h5>
+        <h5>Your score in Russian is: {russianScore}</h5>
+        
                 
 
         </Grid.Column>
@@ -225,8 +221,7 @@ else {
         </Grid>
         
         
-        <br></br>
-
+        
     </div>
 
 
