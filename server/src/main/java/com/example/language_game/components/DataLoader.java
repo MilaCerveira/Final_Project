@@ -261,56 +261,6 @@ public class DataLoader  implements ApplicationRunner {
         answerRepository.save(frq6answer3);
         answerRepository.save(frq6answer4);
 
-
-        Question huquestion1 = new Question("What is the Hungarian word for ‘house’?", "Hungarian");
-                questionRepository.save(huquestion1);
-
-        Answer huq1answer1 = new Answer("Haus", false, "No, the right answer is ‘Ház", huquestion1);
-        Answer huq1answer2 = new Answer("Casa", false, "No, that is the Romanian word", huquestion1);
-        Answer huq1answer3 = new Answer("Ház", true, "Well done", huquestion1);
-        Answer huq1answer4 = new Answer("Dom", false, "No, that is the Russian word", huquestion1);
-        answerRepository.save(huq1answer1);
-        answerRepository.save(huq1answer2);
-        answerRepository.save(huq1answer3);
-        answerRepository.save(huq1answer4);
-
-        Question huquestion2 = new Question("What is the Hungarian word for 'sun'?", "Hungarian");
-                questionRepository.save(huquestion2);
-        Answer huq2answer1 = new Answer("Nap", true, "Well done", huquestion2);
-        Answer huq2answer2 = new Answer("Sol", false, "No, that is the Spanish word", huquestion2);
-        Answer huq2answer3 = new Answer("Sonne", false, "No, that is the German word", huquestion2);
-        Answer huq2answer4 = new Answer("Aurinko", false, "No, the right answer is 'Nap'", huquestion2);
-        answerRepository.save(huq2answer1);
-        answerRepository.save(huq2answer2);
-        answerRepository.save(huq2answer3);
-        answerRepository.save(huq2answer4);
-
-        Question huquestion3 = new Question("What is the Hungarian word for 'Milk'?",  "Hungarian");
-                questionRepository.save(huquestion3);
-        Answer huq3answer1 = new Answer("Mlijeko", false, "No that is the Croatian word", huquestion3);
-        Answer huq3answer2 = new Answer("Leite", false, "No, that is the Portugese word", huquestion3);
-        Answer huq3answer3 = new Answer("Tej", true, "Well done", huquestion3);
-        Answer huq3answer4 = new Answer("Moloko", false, "No, that is the Ukrainian word", huquestion3);
-        answerRepository.save(huq3answer1);
-        answerRepository.save(huq3answer2);
-        answerRepository.save(huq3answer3);
-        answerRepository.save(huq3answer4);
-
-
-        Question huquestion4 = new Question("What is the Hungarian word for “Sea”?", "Hungarian");
-        questionRepository.save(huquestion4);
-        Answer huq4answer1 = new Answer("More", false, "No that is the Russian word", huquestion4);
-        Answer huq4answer2 = new Answer("Mare", false, "No, that is the Italian word", huquestion4);
-        Answer huq4answer3 = new Answer("Hav", false, "No, the right answer is “Tenger", huquestion4);
-        Answer huq4answer4 = new Answer("Tenger", true, "Well done", huquestion4);
-        answerRepository.save(huq4answer1);
-        answerRepository.save(huq4answer2);
-        answerRepository.save(huq4answer3);
-        answerRepository.save(huq4answer4);
-
-
-
-
         Question itquestion1 = new Question("test Q 1", "Italian");
         questionRepository.save(itquestion1);
 
@@ -386,8 +336,8 @@ public class DataLoader  implements ApplicationRunner {
         answerRepository.save(itq6answer2);
         answerRepository.save(itq6answer3);
         answerRepository.save(itq6answer4);
-//
-//
+
+
         Question dequestion1 = new Question("test Q 1", "German");
         questionRepository.save(dequestion1);
 
@@ -471,6 +421,55 @@ public class DataLoader  implements ApplicationRunner {
         answerRepository.save(deq6answer4);
 
 
+        Question huquestion1 = new Question("What is the Hungarian word for ‘house’?", "Hungarian");
+                questionRepository.save(huquestion1);
+
+        Answer huq1answer1 = new Answer("Haus", false, "No, the right answer is ‘Ház", huquestion1);
+        Answer huq1answer2 = new Answer("Casa", false, "No, that is the Romanian word", huquestion1);
+        Answer huq1answer3 = new Answer("Ház", true, "Well done", huquestion1);
+        Answer huq1answer4 = new Answer("Dom", false, "No, that is the Russian word", huquestion1);
+        answerRepository.save(huq1answer1);
+        answerRepository.save(huq1answer2);
+        answerRepository.save(huq1answer3);
+        answerRepository.save(huq1answer4);
+
+        Question huquestion2 = new Question("What is the Hungarian word for 'sun'?", "Hungarian");
+                questionRepository.save(huquestion2);
+        Answer huq2answer1 = new Answer("Nap", true, "Well done", huquestion2);
+        Answer huq2answer2 = new Answer("Sol", false, "No, that is the Spanish word", huquestion2);
+        Answer huq2answer3 = new Answer("Sonne", false, "No, that is the German word", huquestion2);
+        Answer huq2answer4 = new Answer("Aurinko", false, "No, the right answer is 'Nap'", huquestion2);
+        answerRepository.save(huq2answer1);
+        answerRepository.save(huq2answer2);
+        answerRepository.save(huq2answer3);
+        answerRepository.save(huq2answer4);
+
+        Question huquestion3 = new Question("What is the Hungarian word for 'Milk'?",  "Hungarian");
+                questionRepository.save(huquestion3);
+        Answer huq3answer1 = new Answer("Mlijeko", false, "No that is the Croatian word", huquestion3);
+        Answer huq3answer2 = new Answer("Leite", false, "No, that is the Portugese word", huquestion3);
+        Answer huq3answer3 = new Answer("Tej", true, "Well done", huquestion3);
+        Answer huq3answer4 = new Answer("Moloko", false, "No, that is the Ukrainian word", huquestion3);
+        answerRepository.save(huq3answer1);
+        answerRepository.save(huq3answer2);
+        answerRepository.save(huq3answer3);
+        answerRepository.save(huq3answer4);
+
+
+        Question huquestion4 = new Question("What is the Hungarian word for “Sea”?", "Hungarian");
+        questionRepository.save(huquestion4);
+        Answer huq4answer1 = new Answer("More", false, "No that is the Russian word", huquestion4);
+        Answer huq4answer2 = new Answer("Mare", false, "No, that is the Italian word", huquestion4);
+        Answer huq4answer3 = new Answer("Hav", false, "No, the right answer is “Tenger", huquestion4);
+        Answer huq4answer4 = new Answer("Tenger", true, "Well done", huquestion4);
+        answerRepository.save(huq4answer1);
+        answerRepository.save(huq4answer2);
+        answerRepository.save(huq4answer3);
+        answerRepository.save(huq4answer4);
+
+
+
+
         Question roquestion1 = new Question("test Q 1", "Romanian");
         questionRepository.save(roquestion1);
 
@@ -547,11 +546,28 @@ public class DataLoader  implements ApplicationRunner {
         answerRepository.save(roq6answer3);
         answerRepository.save(roq6answer4);
 
+        Question ruquestion1 = new Question("What is the Russian word for “Hi”?", "Russian");
+                questionRepository.save(ruquestion1);
+        Answer ruq1answer1 = new Answer("Szia", false, "No that is the Hungarian word", ruquestion1);
+        Answer ruq1answer2 = new Answer("Privet", true, "Well done", ruquestion1);
+        Answer ruq1answer3 = new Answer("Oi", false, "No, that is the Portuguese word", ruquestion1);
+        Answer ruq1answer4 = new Answer("Hola", false, "No, that is the Spanish word", ruquestion1);
+        answerRepository.save(ruq1answer1);
+        answerRepository.save(ruq1answer2);
+        answerRepository.save(ruq1answer3);
+        answerRepository.save(ruq1answer4);
 
 
-
-
-
+        Question ruquestion2 = new Question("What is the Russian word for “Bye”?", "Russian");
+                questionRepository.save(ruquestion2);
+        Answer ruq2answer1 = new Answer("Poka", true, "Well done", ruquestion2);
+        Answer ruq2answer2 = new Answer("Viszlát", false, "No that is the Hungarian word", ruquestion2);
+        Answer ruq2answer3 = new Answer("Tschüss", false, "No, that is the German word", ruquestion2);
+        Answer ruq2answer4 = new Answer("adiós", false, "No, that is the Spanish word", ruquestion2);
+        answerRepository.save(ruq2answer1);
+        answerRepository.save(ruq2answer2);
+        answerRepository.save(ruq2answer3);
+        answerRepository.save(ruq2answer4);
 
 
     }

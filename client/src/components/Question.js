@@ -27,20 +27,6 @@ const Question = ({questions}) => {
 
     const [activeQuestion, setActiveQuestion] = useState(questionNumber);
 
-    let nonStateAnswer = {};
-    const assignNonStateAnswer = (value) => {
-        nonStateAnswer = questions[activeQuestion].answers[0];
-        console.log("the value of nonStateAnswer is ", nonStateAnswer)
-
-    }
-
-    const printTestMessage = () => {
-        console.log('test message from printTestMessage')
-    }
-
-    const printTestMessagewithArgument = (argument) => {
-        console.log('test message from printTestMessagewithArgument', argument)
-    }
 
     
     useEffect(async() => {       
@@ -48,8 +34,6 @@ const Question = ({questions}) => {
         increaseQuestionNumber();
     }, []);
 
-
-    
 
         useEffect(async() => {   
         console.log('useEffect[questionNumber] in use in Question component')
@@ -113,9 +97,6 @@ const Question = ({questions}) => {
     };
 
 
-    const selectAnswer = (input) => {
-        console.log('using selectAnswer function')
-    }
 
 
     const func1 = () => {
