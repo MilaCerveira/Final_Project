@@ -268,9 +268,9 @@ return (
 
         
                         <button onClick ={func1} className={'btn'}>{questions[activeQuestion].answers[0].answerBody}</button>
-                        <button onClick ={func2} className={'btn'}>2</button>
-                        <button onClick ={func3} className={'btn'}>3</button>
-                        <button onClick ={func4} className={'btn'}>4</button>
+                        <button onClick ={func2} className={'btn'}>{questions[activeQuestion].answers[1].answerBody}</button>
+                        <button onClick ={func3} className={'btn'}>{questions[activeQuestion].answers[2].answerBody}</button>
+                        <button onClick ={func4} className={'btn'}>{questions[activeQuestion].answers[3].answerBody}</button>
                         <br></br>
                         <button onClick={moveToNextQuestion}  className={'btn'}>Next</button>
                         {/* <button onClick ={printTestMessage} className={'btn'}>Print test message</button>

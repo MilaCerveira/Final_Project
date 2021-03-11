@@ -301,7 +301,7 @@ public class DataLoader  implements ApplicationRunner {
         questionRepository.save(huquestion4);
         Answer huq4answer1 = new Answer("More", false, "No that is the Russian word", huquestion4);
         Answer huq4answer2 = new Answer("Mare", false, "No, that is the Italian word", huquestion4);
-        Answer huq4answer3 = new Answer("Hav", false, "No, the right answer is “Tenger", ptquestion4);
+        Answer huq4answer3 = new Answer("Hav", false, "No, the right answer is “Tenger", huquestion4);
         Answer huq4answer4 = new Answer("Tenger", true, "Well done", huquestion4);
         answerRepository.save(huq4answer1);
         answerRepository.save(huq4answer2);
