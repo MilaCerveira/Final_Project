@@ -90,6 +90,7 @@
     width:30px; 
     height: auto;
     animation-iteration-count: infinite;
+    cursor:pointer;
       
 }
 .abbaBaby{
@@ -98,12 +99,14 @@
 
 .gremlin{
   float: right;
+  cursor:pointer;
 }
 .shark{
   animation-iteration-count: infinite;
   animation: sharkAnimation 48s;
   width:30px; 
   height: auto;
+  cursor:pointer;
   
 }
 
