@@ -23,9 +23,24 @@ const Question = ({questions}) => {
     let [questionNumber, setQuestionNumber] = useState(0);
     let [score, setScore] = useState(0);
     let [currentAnswerOutcome, setCurrentAnswerOutcome] = useState("");
+    let [languageNumber, setLanguageNumber] = useState(0); 
+
+
+    const [portugueseScore, setPortugueseScore] = useState(0);
+    const [spanishScore, setSpanishScore] = useState(0);
+    const [frenchScore, setFrenchScore] = useState(0);
+    const [italianScore, setItalianScore] = useState(0);
+    const [germanScore, setGermanScore] = useState(0);
+    const [hungarianScore, setHungarianScore] = useState(0);
+    const [romanianScore, setRomanianScore] = useState(0);
+    const [russianScore, setRussianScore] = useState(0);
+
+
+
     
     
-    
+    //listOfLanguages = ["Portuguese", "Spanish", "French", "Italian", "German", "Hungarian", "Romanian", "Russian"];
+
 
     const [activeQuestion, setActiveQuestion] = useState(questionNumber);
 
@@ -50,6 +65,22 @@ const Question = ({questions}) => {
         console.log('useEffect in use in Question component')
         increaseQuestionNumber();
     }, []);
+
+
+    // useEffect(() => {
+    //     setCurrentLanguage(questions[questionNumber].language);
+    // }, [questionNumber])
+
+
+    // useEffect(() => {
+    //     setCurrentQuestions([]);
+    //     for (const question of questions) {
+    //         if (question.language == listOfLanguages[languageNumber])
+    //         {currentQuestions.push(question)}
+    //         //{currentQuestions.add(question)}
+    //     }
+
+    // },[languageNumber])
 
     // useEffect(() =>{
     //     console.log('using display Page useEffect')
@@ -100,10 +131,47 @@ const Question = ({questions}) => {
 
     const checkIfAnswerIsCorrect = () => {
         setCurrentAnswerOutcome(selectedAnswer.outcome)
+ 
+
+
         if (selectedAnswer.correct == true) {
-            setScore(score + 10)
+            setScore(score + 1)
+            if (questions[questionNumber].language == "Portuguese") {
+                setPortugueseScore(portugueseScore + 1)
+            }
+            else if (questions[questionNumber].language == "Spanish"){
+                setSpanishScore(spanishScore + 1)
+            }
+            else if (questions[questionNumber].language == "French") {
+                setFrenchScore(frenchScore + 1)
+            }
+            else if(questions[questionNumber].language == "Italian"){
+                setItalianScore(italianScore + 1)
+            }
+            else if(questions[questionNumber].language == "German"){
+                setGermanScore(germanScore + 1)
+            }
+
+            else if(questions[questionNumber].language =="Hungarian"){
+                setHungarianScore(hungarianScore +1)
+
+            }
+            else if (questions[questionNumber].language =="Romanian"){
+                setRomanianScore(romanianScore + 1)
+            }
+            else if (questions[questionNumber].language =="Russian"){
+                setRussianScore(russianScore + 1)
+            }
+
+
+
+
+
+
+
+
         }
-        else if (selectedAnswer.correct == false) {setScore(score + 1)}
+        //else if (selectedAnswer.correct == false) {setScore(score + 1)}
         console.log("score = ",score);
     };
 
@@ -147,10 +215,27 @@ const Question = ({questions}) => {
         //checkIfAnswerIsCorrect(selectedAnswer);
     }
 
+    const moveToNextLanguage = () => {
+        setLanguageNumber(languageNumber + 1);
+        //questions.map(question.language == listOfLanguages[languageNumber]
+        // setCurrentQuestions([]);
+        // for (const question of questions) {
+        //     if (question.language == listOfLanguages[languageNumber])
+        //     {currentQuestions.push(question)}
+        //     //{currentQuestions.add(question)}
+        // }
+
+        // setActiveLanguage
+        // language(languageNumber)
+    }
+
 
 
  
 // const displayPage = () => {
+
+
+if ( questionNumber <= questions.length ) {
 
 return (
    
@@ -219,12 +304,69 @@ return (
 
 )
 
-//}
-};
+}
+
+else {
+
+    return (
+        <>
+
     
-   
 
 
 
+ {/* { questions && questions[activeQuestion] && */}
+    <div className={'container'}>
+          <Grid>
+        <Grid.Row columns={1}>
+        <Grid.Column>
+        <div className={'qs'}>
+        
+          
+            
+            
+            
+            
+        </div>
+        <h1>Score page</h1>
+        <h2>Well done! Your final score is: {score}</h2>
+        <h2>Your score in Portuguese is: {portugueseScore}</h2>
+        <h2>Your score in Spanish is: {spanishScore}</h2>
+        <h2>Your score in French is: {frenchScore}</h2>
+        <h4>Your score in German is: {germanScore}</h4>
+        <h2>Your score in Hungarian is: {hungarianScore}</h2>
+        <h2>Your score in Italian is: {italianScore}</h2>
+        <h2>Your score in Romanian is: {romanianScore}</h2>
+        <h4>Your score in Russian is: {russianScore}</h4>
+        
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+                
+
+
+        </Grid.Column>
+        </Grid.Row>
+       
+        </Grid>
+        
+        
+        <br></br>
+        
+        
+
+        
+       
+        
+    </div>
+
+    
+ 
+
+ </>
+    )
+}
+}
 
 export default Question;

@@ -17,14 +17,19 @@ const Map = () => {
     let [showQuestions, setShowQuestions] = useState(false); 
 
     const [questions, setQuestions] = useState([]);
+    
     // const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState({});
-  
+    const [listOfCountries, setListOfCountries] = useState([]);
+
+    // listOfCountries(["Portugal", "Spain", "France", "Italy", "Austria", "Hungary", "Romania"])
+
 
 
     const getQuestions = () =>{
         console.log('getting questions');
-        fetch(`http://localhost:8080/questions/?language=Portuguese`)
+        //fetch(`http://localhost:8080/questions/?language=Portuguese`)
+        fetch(`http://localhost:8080/questions`)
         .then(res => res.json())
         .then(data =>  {
             console.log(data);
