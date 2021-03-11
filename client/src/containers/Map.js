@@ -78,7 +78,10 @@ const Map = () => {
 
 
 
-    
+    // function sleep(ms) {
+    //     return new Promise(resolve => setTimeout(resolve, ms));
+    // }
+
 
     const passQuestionsToQuestionComponent = () => {
         console.log("passing questions to question component");
@@ -122,7 +125,6 @@ const Map = () => {
         <>
         
        
-        
         <button class='top-button' onClick={() => setShowQuestions(!showQuestions)}>{showQuestions ? 'Quit Quiz' : ' Start Quiz'}</button>
         { showQuestions &&
             <>
@@ -138,7 +140,6 @@ const Map = () => {
     
     
         
-       
         
         </>
     )
