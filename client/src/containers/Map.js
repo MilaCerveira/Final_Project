@@ -2,19 +2,13 @@ import React, {useState, useEffect} from 'react';
 import boat from '../assets/boat1.png';
 import shark from '../assets/shark.png';
 import help from '../assets/help.png';
-import map from '../assets/cartooneuromap.png';
-import horn2 from '../assets/horn2.mp3';
 import Question from '../components/Question';
 import tug1 from '../assets/tug.mp3';
-import squeak1 from '../assets/squeak.mp3';
 import score1 from '../assets/score.mp3';
 import biggerboat from '../assets/biggerboat.mp3';
 import alex from '../assets/alex.mp3';
-import gremlin from '../assets/gremlin.png';
-import life from '../assets/life.png';
 import sos from '../assets/sos.png';
 import ab from '../assets/ab.mp3';
-import float from '../assets/pool-floats.png';
 import duck from '../assets/duck.png';
 
 
@@ -84,25 +78,15 @@ const Map = () => {
 
 
 
-    // function sleep(ms) {
-    //     return new Promise(resolve => setTimeout(resolve, ms));
-    // }
-
+    
 
     const passQuestionsToQuestionComponent = () => {
         console.log("passing questions to question component");
 
  
 
-    // if (showQuestions === true){
-    //     console.log("console log from map.js");
-    //     return (
-    //         <>
-            
-    //         <Question questions ={questions}/>
-    //         </>
-    //     )
-    // }
+   
+    
 }
 
     const printErrorMessage = () => {
@@ -165,19 +149,4 @@ const Map = () => {
 export default Map;
 
 
-// function sleep(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// }
-// let done = 0
-// while(done < 40) {
-//     var img = document.getElementsByClassName("image")
-//     console.log("img", img);
-//     if (img && img.length > 0) {
-//         done = true;
-//         const imagePos = img[0].getBoundingClientRect();
-//         console.log("imagePos", imagePos + 10);
-//         setBoatLeftPosition(imagePos.left);
-//     }
-//     await sleep(50);
-//     done++;
-// }
+
