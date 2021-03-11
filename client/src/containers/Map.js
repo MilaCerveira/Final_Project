@@ -9,17 +9,19 @@ const Map = () => {
     let [showQuestions, setShowQuestions] = useState(false); 
 
     const [questions, setQuestions] = useState([]);
+    
     // const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState({});
     const [listOfCountries, setListOfCountries] = useState([]);
 
-    //setListOfCountries(["Portugal", "Spain", "France", "Italy", "Austria", "Hungary", "Romania"])
+    // listOfCountries(["Portugal", "Spain", "France", "Italy", "Austria", "Hungary", "Romania"])
 
 
 
     const getQuestions = () =>{
         console.log('getting questions');
-        fetch(`http://localhost:8080/questions/?language=Portuguese`)
+        //fetch(`http://localhost:8080/questions/?language=Portuguese`)
+        fetch(`http://localhost:8080/questions`)
         .then(res => res.json())
         .then(data =>  {
             console.log(data);
@@ -104,7 +106,9 @@ const Map = () => {
     return(
         <>
         
-       
+       {/* <button>grgr</button>
+       <button>grgr</button>
+       <button>grgr</button> */}
         
         <button class='top-button' onClick={() => setShowQuestions(!showQuestions)}>{showQuestions ? 'Quit Quiz' : ' Start Quiz'}</button>
         { showQuestions &&

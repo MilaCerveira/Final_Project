@@ -23,9 +23,13 @@ const Question = ({questions}) => {
     let [questionNumber, setQuestionNumber] = useState(0);
     let [score, setScore] = useState(0);
     let [currentAnswerOutcome, setCurrentAnswerOutcome] = useState("");
+    const [currentQuestions, setCurrentQuestions] = useState([])
+    let [languageNumber, setLanguageNumber] = useState(0); 
     
     
-    
+    const listOfLanguages = ["Portuguese", "Spanish"];
+    //listOfLanguages = ["Portuguese", "Spanish", "France", "Italy", "Austria", "Hungary", "Romania"];
+
 
     const [activeQuestion, setActiveQuestion] = useState(questionNumber);
 
@@ -50,6 +54,21 @@ const Question = ({questions}) => {
         console.log('useEffect in use in Question component')
         increaseQuestionNumber();
     }, []);
+
+    useEffect(() => {
+        setCurrentQuestions(questions[0]);
+    }, [])
+
+
+    useEffect(() => {
+        setCurrentQuestions([]);
+        for (const question of questions) {
+            if (question.language == listOfLanguages[languageNumber])
+            {currentQuestions.push(question)}
+            //{currentQuestions.add(question)}
+        }
+
+    },[languageNumber])
 
     // useEffect(() =>{
     //     console.log('using display Page useEffect')
@@ -147,10 +166,27 @@ const Question = ({questions}) => {
         //checkIfAnswerIsCorrect(selectedAnswer);
     }
 
+    const moveToNextLanguage = () => {
+        setLanguageNumber(languageNumber + 1);
+        //questions.map(question.language == listOfLanguages[languageNumber]
+        // setCurrentQuestions([]);
+        // for (const question of questions) {
+        //     if (question.language == listOfLanguages[languageNumber])
+        //     {currentQuestions.push(question)}
+        //     //{currentQuestions.add(question)}
+        // }
+
+        // setActiveLanguage
+        // language(languageNumber)
+    }
+
 
 
  
 // const displayPage = () => {
+
+
+if ( questionNumber <= questions.length ) {
 
 return (
    
@@ -188,6 +224,7 @@ return (
                         <button onClick ={func3} className={'btn'}>3</button>
                         <button onClick ={func4} className={'btn'}>4</button>
                         <button onClick={moveToNextQuestion}  className={'btn'}>Next Question</button>
+                        <button onClick={moveToNextLanguage} className={'btn'}>Next Language</button>
                         {/* <button onClick ={printTestMessage} className={'btn'}>Print test message</button>
                         <button onClick ={printTestMessagewithArgument(1)} className={'btn'}>Print test message with argument</button> */}
 
@@ -219,12 +256,60 @@ return (
 
 )
 
-//}
-};
+}
+
+else {
+
+    return (
+        <>
+
     
-   
 
 
 
+ {/* { questions && questions[activeQuestion] && */}
+    <div className={'container'}>
+          <Grid>
+        <Grid.Row columns={1}>
+        <Grid.Column>
+        <div className={'qs'}>
+        
+          
+            
+            
+            
+            
+        </div>
+        <h1>some message</h1>
+        
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+                <button>he;l;</button>
+
+
+        </Grid.Column>
+        </Grid.Row>
+       
+        </Grid>
+        
+        
+        <br></br>
+        
+        
+
+        
+       
+        
+    </div>
+
+    
+ 
+
+ </>
+    )
+}
+}
 
 export default Question;
