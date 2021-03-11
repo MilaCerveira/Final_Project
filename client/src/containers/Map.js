@@ -15,20 +15,14 @@ import duck from '../assets/duck.png';
 const Map = () => {
 
     let [showQuestions, setShowQuestions] = useState(false); 
-
     const [questions, setQuestions] = useState([]);
-    
-    // const [activeQuestion, setActiveQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState({});
     const [listOfCountries, setListOfCountries] = useState([]);
-
-    // listOfCountries(["Portugal", "Spain", "France", "Italy", "Austria", "Hungary", "Romania"])
 
 
 
     const getQuestions = () =>{
         console.log('getting questions');
-        //fetch(`http://localhost:8080/questions/?language=Portuguese`)
         fetch(`http://localhost:8080/questions`)
         .then(res => res.json())
         .then(data =>  {
@@ -36,7 +30,6 @@ const Map = () => {
             setQuestions(data)
         })
         .then(passQuestionsToQuestionComponent())
-        // .then(passQuestionsToQuestionComponent());
         console.log(questions)
 
     }
@@ -44,56 +37,13 @@ const Map = () => {
     useEffect(async() => {
         getQuestions()
     
-        // getQuestions().then(passQuestionsToQuestionComponent(), printErrorMessage());
       }, []);
-
-
-        
-
-     
-
-        
-
-
-
-    // const [questions, setQuestions] = useState({});
-
-    // const getQuestions = () =>{
-    //     console.log('getting questions');
-    //     fetch(`http://localhost:8080/questions/?language=Spanish`)
-    //     .then(res => res.json())
-    //     .then(data => setQuestions(data));
-    // }
-
-
-    //   useEffect(() => {
-    //     getQuestions();
-    //   }, []);
-    
-
-
-    // const getLaunch = () => {
-    //     console.log("getting launch information");
-    //     fetch(`https://api.spacexdata.com/v3/launches/${selectedLaunchId}`)
-    //       .then(res => res.json())
-    //       .then(data => setLaunch(data));
-    //   }
-
-
-
-
-
-    // function sleep(ms) {
-    //     return new Promise(resolve => setTimeout(resolve, ms));
-    // }
 
 
     const passQuestionsToQuestionComponent = () => {
         console.log("passing questions to question component");
 
- 
 
-   
     
 }
 
@@ -143,8 +93,7 @@ const Map = () => {
     
     <img class ='gremlin' src={sos} onClick={playAlex} />
     
-    
-        
+
         
         </>
     )
