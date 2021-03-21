@@ -78,7 +78,8 @@ const Map = () => {
 
     return(
         <>
-        
+
+        {/* <h1>Travelingo</h1> */}
        
         <button class='top-button' onClick={() => setShowQuestions(!showQuestions)}>{showQuestions ? 'Quit Quiz' : ' Start Quiz'}</button>
         { showQuestions &&
@@ -91,7 +92,7 @@ const Map = () => {
             </>
             }
     
-    <img class ='gremlin' src={sos} onClick={playAlex} />
+    <img class ='gremlin' src={sos} />
     
 
         
